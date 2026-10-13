@@ -1,0 +1,46 @@
+name: One-off clear Discussion
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/oneoff-clear-discussion.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  edit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Remove Czech placeholder text from Discussion only
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('reserse.tex')
+          s = p.read_text(encoding='utf-8')
+          old = r'''\part{Discussion}
+
+Diskuse o tom, jakym smerem by mel jit dalsi vyzkum, napriklad provest mereni s varem vody na dvou vzorcich s podobnou geometrii, ale jeden bude kov a druhy keramika = dokáže se skutečný vliv vodivosti samotného materiálu pěny. To už nejsem schopen provést pro disertaci.
+
+\pagebreak'''
+          new = r'''\part{Discussion}
+
+\pagebreak'''
+          if s.count(old) != 1:
+              raise SystemExit(f'Expected exactly one target block, found {s.count(old)}')
+          p.write_text(s.replace(old, new), encoding='utf-8')
+          PY
+
+      - name: Commit the single source change
+        run: |
+          git config user.name "ChatGPT via GitHub Actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add reserse.tex
+          git diff --cached --exit-code && exit 0 || true
+          git commit -m "Clear Discussion placeholder text"
+          git push
