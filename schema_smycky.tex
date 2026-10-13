@@ -1,0 +1,180 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric, arrows, arrows.meta, positioning}
+\usepackage[american,siunitx]{circuitikz}
+\usetikzlibrary{arrows,shapes,calc, positioning, patterns, decorations, decorations.markings,quotes}
+\tikzset{rotarrow/.pic={
+\draw[thin,->] (-0.2,-0.2)  to [out=-60,in=60, looseness=4] ++(0,0.4) node [above=1mm] {\tikzpictext};
+},
+}
+
+\usetikzlibrary{decorations.pathmorphing}
+
+
+
+\begin{document}
+
+\begin{tikzpicture}
+    % Custom arrow style
+    \tikzset{custom arrow/.style={
+        -{Stealth[length=12pt, width=20pt]}, % Arrowhead with specific size
+        line width=4pt, % Set the line thickness
+        line cap=square, % Square endings for the line
+        shorten >=2pt, % Shorten the start of the line
+        shorten <=2pt  % Shorten the end of the line
+    },
+    amp1/.style = {regular polygon, regular polygon sides=3,
+              draw, fill=white, text width=0em,
+              inner sep=0.5mm, outer sep=0mm,
+              shape border rotate=0},
+    amp2/.style = {regular polygon, regular polygon sides=3,
+              draw, fill=white, text width=0em,
+              inner sep=0.5mm, outer sep=0mm,
+              shape border rotate=180},
+    amp3/.style = {regular polygon, regular polygon sides=3,
+              draw, fill=white, text width=0em,
+              inner sep=0.5mm, outer sep=0mm,
+              shape border rotate=-90},
+    amp4/.style = {regular polygon, regular polygon sides=3,
+              draw, fill=white, text width=0em,
+              inner sep=0.5mm, outer sep=0mm,
+              shape border rotate=90}
+    }
+
+    % Define positions relative to the pump
+    \coordinate (pump) at (0,0);
+    \coordinate (resistor) at (-5,-2); % This will be shifted to be relative to (pump)
+
+    % Pump symbol
+    \node[circle, draw, thick, minimum size=1.5cm, inner sep=0] (pump) at (pump) {};
+    
+    % Arrow inside the pump, not touching the circle boundary
+    \draw[thick, custom arrow] ($(pump.south)+(0,0.3)$) -- ($(pump.north)-(0,0.3)$);
+    
+    % Label below the pump
+    \node at ($(pump.south)-(0,0.2)$) {Pump};
+    \node at ($(resistor.south)+(-0.13,1.2)$) {Electric heater}; % Adjusted to be relative to pump
+
+    % Define a style for the rectangle
+    \tikzstyle{rect} = [draw, thick, minimum width=2cm, minimum height=1cm]
+    
+    % Draw a rectangle around the resistor symbol, shifted down
+    \begin{scope}[shift={(0,0)}] % Shift down by 1 unit relative to pump
+        \draw[rect] (pump) ++(-6.3,-0.5) rectangle ++(2.3,1);
+        % Draw the resistor symbol inside the rectangle
+        \draw (pump) ++(-5.15,0) to[R=,-] ++(1.15,0);
+        \draw (pump) ++(-6.3,0) to[R=,-] ++(1.15,0);
+    \end{scope}
+
+    % Connect pump and resistor with a line
+    \draw[thick] (pump.west) -- ++(-3.25,0); % Line from the pump to the east side of the rectangle
+    \draw[thick] (pump.north) -- ++(0,2.25); % Line from the pump to the east side of the rectangle
+    \draw[thick] ($(resistor.south)+(-1.3,2)$) -- ++(-2,0); % Line from the pump to the east side of the rectangle
+
+    \begin{scope}[shift={(0,0)}] % Shift down by 1 unit relative to pump
+        \draw[rect] (pump) ++(-0.5,3) rectangle ++(1,1.6);
+        % Draw the resistor symbol inside the rectangle
+        \draw (pump) ++(0,3.2) to[R,] ++(-0,1.15);
+    \end{scope}
+
+    \draw[thick] (pump.west) -- ++(-3,0); % Line from the pump to the east side of the rectangle
+
+
+    \draw[thick] ($(pump.north)+(-0.01,2.44)$) -- ++(1,0); % Line from the pump to the east side of the rectangle
+    \draw[thick] ($(pump.north)+(+0.01,3.58)$) -- ++(-1,0); % Line from the pump to the east side of the rectangle
+
+    \node at ($(pump.east)+(0,5)$) {Cooler};
+    \node at ($(pump.east)+(-2,2.48)$) {Bypass};
+
+
+    \node at ($(pump.east)+(2,12.5)$) {A};
+    \node at ($(pump.east)+(-14,12.5)$) {A};
+    \node at ($(pump.east)+(2,-6.5)$) {A};
+    \node at ($(pump.east)+(-14,-6.5)$) {A};
+
+    \draw[thick] ($(pump.north)+(0,3.85)$) -- ++(0,2.76); % Line from the pump to the east side of the rectangle
+    \draw[thick] ($(pump.north)+(0,6.6)$) -- ++(-3.1,0); % k testovaci sekci
+
+    \draw[thick] ($(pump.north)+(0,1.4)$) -- ++(-2,0); % bypass
+    \draw[thick] ($(pump.north)+(-2,1.4)$) -- ++(0,-2.15); % 
+
+    \node[amp2] at ($(pump.north)+(-2,0.48)$) {}; % Line from the pump to the east side of the rectangle
+    \node[amp1] at ($(pump.north)+(-2,0.2)$) {}; % Line from the pump to the east side of the rectangle
+
+
+    \draw[thick] ($(resistor.south)+(-1.3,2)$) -- ++(-3,0); % vypousteci ventil
+    \draw[thick] ($(resistor.south)+(-3.3,2)$) -- ++(0,-1); % 
+    \node[amp1] at ($(pump.north)+(-8.3,-1.48)$) {}; % 
+    \node[amp2] at ($(pump.north)+(-8.3,-1.2)$) {}; % 
+
+
+    \draw[thick] ($(pump.north)+(-9.285,-0.77)$) -- ++(0,7.38); % leva strana
+
+    \begin{scope}[shift={(0,0)}] % Shift down by 1 unit relative to pump
+        \draw[rect] (pump) ++(-6.1,7.17) rectangle ++(3,0.4);
+    \end{scope}
+
+    \draw[thick] ($(pump.north)+(-9.3,6.6)$) -- ++(3.2,0); % k testovaci sekci
+
+    \node at ($(pump.east)+(-5.4,7.8)$) {Test section};
+
+
+    \draw[thick] ($(resistor.south)+(-6.,7)$) -- ++(1.7,0); % k nadrzi
+    \draw[thick] ($(resistor.south)+(-6.,5.2)$) -- ++(1.7,0); % k nadrzi
+
+    \node[amp2] at ($(pump.north)+(-9.285,3.48)$) {}; % 
+    \node[amp1] at ($(pump.north)+(-9.285,3.2)$) {}; % 
+
+    \draw[rounded corners=1cm] ($(pump.north)+(-11,1)$) -- ($(pump.north)+(-13,1)$) -- ($(pump.north)+(-13,5.5)$) -- ($(pump.north)+(-11,5.5)$) -- cycle;
+
+    \node[amp3] at ($(pump.north)+(-10.3,4.235)$) {}; % 
+    \node[amp4] at ($(pump.north)+(-10.02,4.235)$) {}; % 
+    \node[amp3] at ($(pump.north)+(-10.3,2.435)$) {}; % 
+    \node[amp4] at ($(pump.north)+(-10.02,2.435)$) {}; % 
+
+    \node at ($(pump.east)+(-12.76,4.)$) {Tank};
+
+
+    \draw[thick] ($(resistor.south)+(-3.3,11.)$) -- ++(0,-1.65); % 
+    \node[amp1] at ($(pump.north)+(-8.3,7.13)$) {}; % 
+    \node[amp2] at ($(pump.north)+(-8.3,7.41)$) {}; % 
+
+    \coordinate (xxx) at (3.7,8);
+
+    \draw[rounded corners=0.3cm] ($(xxx.north)+(-11,1)$) -- ($(xxx.north)+(-13,1)$) -- ($(xxx.north)+(-13,2.5)$) -- ($(xxx.north)+(-11,2.5)$) -- cycle;
+    \draw[dotted, -{Stealth[length=3mm, width=3mm]}, line width=0.5mm]  (-2.7,7) to [in=-90, out=-90, looseness=1.5]   (-6.6,7);
+
+    \node at ($(pump.east)+(-5.4,5.8)$) {\textbf{$\Delta p$, $\Delta T$}};
+
+
+    \draw[thick] ($(resistor.south)+(-4,10.)$) -- ++(0,-0.65); %odvzdusnovaci ventil
+    \node[amp1] at ($(pump.north)+(-9,7.13)$) {}; % 
+    \node[amp3] at ($(pump.north)+(-9.147,7.28)$) {}; % 
+    \draw[decorate, decoration={zigzag, segment length=5pt, amplitude=1.5}] 
+    ($(pump.north)+(-9.,7.28)$) -- ($(pump.north)+(-9.,7.8)$);
+
+
+    \node[font=\bfseries\Huge] at (-6,3) {TEAL'C};
+
+    \draw[thick] ($(resistor.south)+(3.3,10.)$) -- ++(0,-0.65); % 
+    \draw[thick] ($(resistor.south)+(4.3,10.)$) -- ++(0,-0.65); % 
+
+    \draw ($(resistor.south)+(3.3,10.35)$) circle [radius=0.35] node {$\dot{m}$};
+
+    \draw ($(resistor.south)+(4.3,10.35)$) circle [radius=0.35] node {$p$};
+
+    \node[amp3] at ($(pump.north)+(-2.8,6.6)$) {}; % 
+    \node[amp4] at ($(pump.north)+(-2.52,6.6)$) {}; % 
+
+    \node[amp3] at ($(pump.north)+(-6.8,6.6)$) {}; % 
+    \node[amp4] at ($(pump.north)+(-6.52,6.6)$) {}; % 
+
+
+    \node at ($(pump.north)+(-8.3,9.1)$) {Expansion};
+    \node at ($(pump.north)+(-8.3,8.8)$) {tank};
+
+\end{tikzpicture}
+
+    
+\end{document}

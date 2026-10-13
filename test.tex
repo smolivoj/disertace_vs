@@ -1,0 +1,15 @@
+\documentclass{article}
+\usepackage[backend=biber,style=numeric]{biblatex}
+
+% Add your .bib file
+\addbibresource{yourbibliography.bib}
+
+\begin{document}
+
+% First sub-bibliography with separate numbering
+\printbibliography[category=yourpub, heading=subbibliography, title={My Publications}, resetnumbers]
+
+% Second sub-bibliography with separate numbering
+\printbibliography[notcategory=yourpub, heading=subbibliography, title={Other References}, resetnumbers]
+
+\end{document}
