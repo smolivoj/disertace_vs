@@ -1,0 +1,29 @@
+name: Build thesis PDF
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install TeX dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-luatex texlive-latex-extra texlive-bibtex-extra biber texlive-lang-czechslovak
+
+      - name: Compile dissertation
+        run: latexmk -lualatex -interaction=nonstopmode -file-line-error reserse.tex
+
+      - name: Upload PDF
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dissertation-pdf
+          path: reserse.pdf
+          if-no-files-found: warn
