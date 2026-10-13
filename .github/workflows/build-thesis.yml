@@ -15,7 +15,7 @@ jobs:
       - name: Install TeX dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y latexmk texlive-luatex texlive-latex-extra texlive-bibtex-extra biber texlive-lang-czechslovak
+          sudo apt-get install -y latexmk texlive-luatex texlive-latex-extra texlive-bibtex-extra texlive-science biber texlive-lang-czechslovak
 
       - name: Compile dissertation
         run: latexmk -lualatex -interaction=nonstopmode -file-line-error reserse.tex
