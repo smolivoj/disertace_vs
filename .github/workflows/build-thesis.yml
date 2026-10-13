@@ -5,12 +5,37 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Clear Discussion placeholder text
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('reserse.tex')
+          s = p.read_text(encoding='utf-8')
+          heading = r'\part{Discussion}'
+          start = s.index(heading) + len(heading)
+          end = s.index(r'\pagebreak', start)
+          block = s[start:end]
+          expected = 'Diskuse o tom, jakym smerem by mel jit dalsi vyzkum'
+          if expected not in block:
+              raise SystemExit('Expected Czech Discussion placeholder not found')
+          s = s[:start] + '\n\n' + s[end:]
+          p.write_text(s, encoding='utf-8')
+          PY
+          git config user.name "ChatGPT via GitHub Actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add reserse.tex
+          git commit -m "Clear Discussion placeholder text"
+          git push
 
       - name: Compile dissertation
         uses: xu-cheng/latex-action@v3
