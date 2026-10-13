@@ -2,9 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{pgfplots}
-\pgfplotsset{compat=1.17}
 \pgfsetplotmarksize{0pt}
-\usepgfplotslibrary{fillbetween}
 \usepackage{filecontents}
 \usepackage{caption}
 \usepackage[czech, english]{babel}
@@ -24,39 +22,33 @@
 \usepackage{pdflscape}
 \usepackage{xcolor}
 \usepackage{lmodern}
-\usepackage{babel}
-\usepackage{diagbox, xcolor}
+\usepackage{diagbox}
 \usepackage{tikz,colortbl,amsmath}
 \usetikzlibrary{calc}
 \usepackage{zref-savepos}
 \usepackage{adjustbox}
-\usepackage{etoolbox} % for ifthen
+\usepackage{etoolbox}
 \usepackage{bookmark}
 \usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage{float}   % kvůli [H]
-\usepackage{tikz}
+\usepackage{float}
 \usetikzlibrary{arrows.meta, positioning}
-\usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \pgfplotsset{compat=1.18}
 \usepgfplotslibrary{fillbetween}
 
-
-\usepackage{siunitx}
 \sisetup{
   per-mode=symbol,
   detect-all,
   range-phrase=--,
 }
 
-
 \usepackage[backend=biber,style=numeric,defernumbers=true,sorting=none]{biblatex}
 \addbibresource{ref.bib}
 
-% Define your publications category
+% Bibliography filters
 \defbibfilter{mypubs}{
   keyword={mypub}
 }
@@ -65,10 +57,10 @@
   not keyword={mypub}
 }
 
-% Custom numbering for "My Publications"
+% Prefix the author's publications with "A" in the bibliography.
 \DeclareFieldFormat{labelnumber}{\ifkeyword{mypub}{A#1}{#1}}
 
-% Custom citation command for "My Publications"
+% Citation command used for the author's publications.
 \DeclareCiteCommand{\mycite}[\mkbibbrackets]
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
@@ -76,7 +68,6 @@
      \printfield{labelnumber}}}
   {\multicitedelim}
   {\usebibmacro{postnote}}
-
 
 \begin{document}
 
