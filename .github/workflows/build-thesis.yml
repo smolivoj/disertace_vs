@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,14 +15,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Upload source snapshot
-        uses: actions/upload-artifact@v4
-        with:
-          name: thesis-source-snapshot
-          path: |
-            reserse.tex
-            ref.bib
-          if-no-files-found: error
+      - name: Apply supervisor revision
+        run: |
+          cat .github/patch_parts/part0.txt .github/patch_parts/part1.txt .github/patch_parts/part23.txt .github/patch_parts/part45.txt > /tmp/revision.b64
+          base64 -d /tmp/revision.b64 > /tmp/revision.xz
+          xz -d /tmp/revision.xz
+          git apply --check /tmp/revision
+          git apply /tmp/revision
+
+      - name: Commit revised thesis
+        run: |
+          git config user.name "ChatGPT via GitHub Actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add reserse.tex ref.bib
+          git commit -m "Incorporate supervisor revisions"
+          git push
 
       - name: Compile dissertation
         uses: xu-cheng/latex-action@v3
