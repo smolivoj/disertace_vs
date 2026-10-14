@@ -1,18 +1,27 @@
-name: Export thesis source
+name: Apply audited supervisor revisions
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  export:
+  revise:
+    if: github.event.head_commit.message != 'Apply audited supervisor revisions'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Upload source
-        uses: actions/upload-artifact@v4
-        with:
-          name: thesis-source
-          path: |
-            reserse.tex
-            ref.bib
+      - name: Apply revision audit
+        run: python .github/revision_audit.py
+      - name: Commit revised thesis
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reserse.tex
+          if git diff --cached --quiet; then
+            echo "No thesis changes to commit"
+          else
+            git commit -m "Apply audited supervisor revisions"
+            git push
+          fi
