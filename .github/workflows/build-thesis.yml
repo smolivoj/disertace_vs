@@ -19,10 +19,13 @@ jobs:
           latexmk_use_lualatex: true
           args: -interaction=nonstopmode -file-line-error
 
-      - name: Upload PDF
+      - name: Upload PDF and source snapshot
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: dissertation-pdf
-          path: reserse.pdf
+          path: |
+            reserse.pdf
+            reserse.tex
+            ref.bib
           if-no-files-found: warn
