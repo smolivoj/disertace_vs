@@ -157,7 +157,7 @@ $\mu$CT & Micro-computed Tomography \\
 
 \part{Introduction}
 
-The development of commercially viable nuclear fusion reactors represents one of the greatest engineering challenges of the twenty-first century. Fusion has the potential to provide virtually unlimited low-carbon energy while avoiding many of the long-term environmental concerns associated with conventional nuclear fission. During the last decades, substantial progress has been achieved in plasma physics, superconducting magnet technology and reactor engineering, leading to the construction of large experimental facilities such as ITER and Wendelstein~7-X. At the same time, commercial fusion companies have significantly accelerated technological development and shortened the expected timeline towards demonstration power plants. Despite these advances, several key engineering challenges remain unresolved before fusion can become a practical source of electricity.
+The development of commercial fusion reactors represents one of the greatest engineering challenges of the twenty-first century. Fusion has the potential to provide virtually unlimited low-carbon energy while avoiding many of the long-term environmental concerns associated with conventional nuclear fission. During the last decades, substantial progress has been achieved in plasma physics, superconducting magnet technology and reactor engineering, leading to the construction of large experimental facilities such as ITER and Wendelstein~7-X. At the same time, commercial fusion companies have significantly accelerated technological development and shortened the expected timeline towards demonstration power plants. Despite these advances, several key engineering challenges remain unresolved before fusion can become a practical source of electricity.
 
 Among these challenges, the removal of extreme thermal loads from plasma-facing components remains one of the most critical. Divertors and first-wall components are exposed to heat fluxes reaching several tens of megawatts per square metre, exceeding those encountered in almost any other engineering application. These components must operate reliably under continuous high heat flux conditions while maintaining structural integrity and acceptable thermal stresses throughout their service lifetime. Consequently, the performance of cooling systems represents one of the principal factors determining the feasibility, efficiency and economic viability of future fusion power plants. Current high heat flux cooling concepts, including swirl tubes and hypervapotrons, have demonstrated excellent thermal performance and are considered mature technologies for present-day experimental devices. However, future reactors are expected to operate under even higher thermal loads and significantly longer pulse durations, approaching steady-state operation. Under these conditions, conventional cooling concepts gradually approach their physical limits imposed by critical heat flux and increasing hydraulic resistance, creating a need for alternative cooling strategies capable of providing further improvements in thermal performance.
 
@@ -200,7 +200,7 @@ The proposed objectives and hypotheses provide the scientific framework for the 
 \pagebreak
 
 \part{Literature Review and Theoretical Background}
-The development of commercially viable nuclear fusion reactors represents one of the greatest engineering challenges of the twenty-first century. While the fundamental principles of fusion have been understood for decades, transforming these principles into a reliable source of electricity requires overcoming numerous technological limitations. Among them, the management of extremely high heat loads imposed on plasma-facing components is one of the most critical obstacles. Future fusion power plants must operate continuously under thermal conditions that exceed those encountered in nearly every other engineering application. Consequently, the development of efficient cooling technologies has become an essential prerequisite for the realization of fusion energy.
+The development of commercial fusion reactors represents one of the greatest engineering challenges of the twenty-first century. While the fundamental principles of fusion have been understood for decades, transforming these principles into a reliable source of electricity requires overcoming numerous technological limitations. Among them, the management of extremely high heat loads imposed on plasma-facing components is one of the most critical obstacles. Future fusion power plants must operate continuously under thermal conditions that exceed those encountered in nearly every other engineering application. Consequently, the development of efficient cooling technologies has become an essential prerequisite for the realization of fusion energy.
 \\
 \\
 The objective of the theoretical part of this dissertation is to establish the scientific and engineering background required for the subsequent original research. The discussion begins with an overview of magnetic confinement fusion and introduces the two principal reactor concepts, tokamaks and stellarators, together with the current state of public and private fusion research. Particular attention is devoted to the evolution of reactor-scale experimental facilities because they define the thermal loads and operational requirements that future cooling systems must withstand.
@@ -212,7 +212,7 @@ The second part of the theoretical background focuses on the problem of power ex
 Since the research presented in this dissertation investigates porous material based cooling channels, the following chapters summarize the physical properties of porous media, manufacturing technologies and the current state of research in this field. Particular emphasis is placed on transport phenomena occurring inside porous structures, including pressure losses, permeability, effective thermal conductivity and enhanced convective heat transfer. Existing numerical approaches for modelling flow through porous media are also reviewed, providing the theoretical framework for the computational analyses performed later in this work.
 \\
 \\
-The theoretical part therefore serves not only as a review of the current state of knowledge but also as a logical transition toward the original experimental and numerical investigations presented in the second part of the dissertation. It identifies the existing limitations of conventional cooling technologies and motivates the development of porous material based cooling channels as a promising solution for future fusion reactors.
+The theoretical part therefore serves as an introduction to the original experimental and numerical investigations presented in the second part of the dissertation, while identifying the limitations of conventional cooling technologies that motivate porous-material-based channels. It identifies the existing limitations of conventional cooling technologies and motivates the development of porous material based cooling channels as a promising solution for future fusion reactors.
 
 \pagebreak
 
@@ -285,7 +285,7 @@ The axisymmetric configuration significantly simplifies both manufacturing and m
 \\
 Toroidal field coils are identical and can be manufactured repeatedly with relatively tight tolerances, while the vacuum vessel also follows a rotationally symmetric geometry.
 This simplicity was one of the main reasons why tokamaks became the dominant concept in magnetic confinement research throughout the second half of the twentieth century.
-Experimental facilities such as JET demonstrated reactor-relevant plasma performance, and the same design philosophy has been adopted for ITER and the European DEMO reactor.
+Experimental facilities such as JET demonstrated fusion-relevant plasma performance, and the same design philosophy has been adopted for ITER and the European DEMO reactor.
 \\
 \\
 Despite these advantages, tokamaks require sophisticated active control systems to maintain plasma equilibrium throughout the discharge.
@@ -349,11 +349,13 @@ An overview of aspect ratios and volumes of plasma in few selected fusion device
   \hline
    & JET & LHD & W7-X & ITER \\
   \hline
-  Major radius $R_0$ & 2.96 m & 3.9 m & 5.5 m & 6.2 m \\
+  Device type & Tokamak & Stellarator & Stellarator & Tokamak \\
+  \hline
+  Major radius $R_0$ & 2.96~m & 3.9~m & 5.5~m & 6.2~m \\
   \hline
   Aspect ratio $A$ & \textbf{2.7} & \textbf{6.5} & \textbf{10.7} & \textbf{3.1} \\
   \hline
-  Plasma volume $V_\mathrm{p}$ & 100 $m^3$ & 30 $m^3$ & 30 $m^3$ & 900 $m^3$ \\
+  Plasma volume $V_\mathrm{p}$ & 100~m$^3$ & 30~m$^3$ & 30~m$^3$ & 900~m$^3$ \\
   \hline
   \end{tabular} 
   \caption{An overview of fusion device parameters.}
@@ -814,7 +816,7 @@ Figure \ref{fig:ST_1} shows the ITER divertor target design, the swirl tube is s
 \\
 \\
 \noindent An extensive numerical study was performed by M. Ghambalez to estimate the optimal twist of the swirl tube tape to achive the highest heat transfer efficiency in relation to the operating conditions.
-The study involves numerical simulations examining the effects of twisted tape inserts with various design parameters—twisted tape pitch, truncation percentage, and positioning—on the heat transfer and flow characteristics in tubes. The results show that reducing the twisted tape pitch significantly enhances the heat transfer, with lower pitch values like L/4 achieving the highest improvement in the Nusselt number (up to 151.42~\% at a Reynolds number of 1000). Additionally, truncating the twisted tape reduces both heat transfer and pressure drop, with the best thermal performance observed when the tape is positioned at the tube entrance. These insights help optimize heat exchanger designs for improved energy efficiency \cite{Ghalambaz2020}.
+The study involves numerical simulations examining the effects of twisted tape inserts with various design parameters—twisted tape pitch, truncation percentage, and positioning—on the heat transfer and flow characteristics in tubes. The results show that reducing the twisted tape pitch significantly enhances the heat transfer, with lower pitch values like L/4 achieving the highest improvement in the Nusselt number (up to 151.42~\% at a Reynolds number of 1000). Additionally, truncating the twisted tape reduces both heat transfer and pressure drop, with the best thermal performance observed when the tape is positioned at the tube entrance. These insights help optimize heat exchanger designs for improved energy efficiency.
 
 \begin{figure}[h]
   \centering
