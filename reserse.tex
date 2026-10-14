@@ -910,8 +910,6 @@ Research in this area often employs advanced experimental techniques and computa
 
 \subsection{Nukiyama curve}
 
-\doplnit{Doplnit zdrojovou Nukiyamovu varnou křivku a podle připomínky vedoucího případně také fit původních dat. Bez zdrojových dat nelze fit věrohodně vytvořit ani zkontrolovat.}
-
 The Nukiyama curve is a fundamental concept in thermal hydraulics that describes the relationship between heat flux and surface temperature during boiling processes. 
 It characterizes the behavior of a cooling surface subjected to increasing heat fluxes and illustrates the critical transition points in heat transfer performance. 
 The curve typically shows three distinct regions: the nucleate boiling regime, the critical heat flux (CHF) point, and the post-CHF regime. 
@@ -3996,11 +3994,11 @@ Both pressure contours are for the case of 0.5~kg/s (30~L/min) of water mass flo
 
  Figure \ref{fig:chf_results} shows the experimental results of the thermocouple measurements at three different positions within the solid CuCrZr channel sample body.
 The flow of the inlet water is 6~L/min, the inlet temperature is 60~$^\circ$C.
-Increasing the heat flux on the tested samples resulted in various results.
+The two samples showed different thermal responses as the imposed heat flux was increased.
 The critical heat flux of the plain sample was observed at approximately 4~MW/m$^2$, a rapid increase of sample temperatures above this heat flux resulted in the termination of experimental measurements for safety reasons.
 The porous sample was able to exhaust heat above this limit without a significant increase in temperature.
 The experimental measurement of the porous sample was carried out up to 4.7~MW/m$^2$ due to the heating power limitations of the inductive heating source used.
-Although the exact value of the critical heat flux value of the porous sample was not found, the results clearly indicate that the CHF value of the porous sample is significantly increased compared to that of the plain sample.
+The absolute CHF of the porous sample was not reached. The experiment therefore demonstrates only that, under the investigated boundary conditions, the porous configuration sustained a higher heat flux than the plain channel before the available heating power became the limiting factor.
 
 \begin{figure}[ht!]
   \centering
@@ -4037,96 +4035,137 @@ Within the investigated boundary conditions, the porous insert therefore increas
 \pagebreak
 \part{Results}
 
-This chapter summarizes the concrete outputs of the four principal research work packages presented in the dissertation. Detailed methods, intermediate results and discussion remain in the corresponding research chapters; only the principal quantitative and engineering outcomes are collected here.
+This chapter collects the principal outputs of the four research work packages. The purpose is to state the concrete findings and their immediate interpretation without repeating the full methods and intermediate discussion given in the preceding chapters.
 
 \section{Controlled porous geometries: parametric numerical study}
+\subsection*{Principal results}
 \begin{itemize}
-    \item A controlled family of substitute porous geometries was used to separate the influence of porosity $\varepsilon$ and tortuosity $\tau$ on hydraulic resistance.
-    \item Permeability increased strongly with increasing porosity and decreased with increasing tortuosity. The fitted relationship was
+    \item A controlled family of substitute porous geometries was used to isolate the influence of porosity $\varepsilon$ and tortuosity $\tau$ on hydraulic resistance.
+    \item Permeability increased with porosity and decreased with tortuosity. The fitted relationship was
     \[
     K = 9.439\times10^{-7}\,\tau^{-3.091}\varepsilon^{3.143}\;\mathrm{m^2},
     \qquad R^2_{\log K}=0.9531.
     \]
-    \item The inertial contribution represented by the Forchheimer coefficient followed the opposite trend,
+    \item The inertial contribution represented by the Forchheimer coefficient followed the opposite tendency,
     \[
     \beta = 6.801\times10^{1}\,\tau^{1.661}\varepsilon^{-2.709}\;\mathrm{m^{-1}},
     \qquad R^2_{\log \beta}=0.9549.
     \]
-    \item Validation against additively manufactured reference samples showed that the numerical methodology reproduces the measured pressure losses with engineering accuracy, generally within approximately 10\,\% over most of the investigated range.
+    \item Validation against additively manufactured reference samples showed agreement of the predicted and measured pressure losses generally within approximately 10\,\% over most of the investigated range.
 \end{itemize}
+
+\subsection*{Interpretation}
+The controlled geometry study establishes the clearest causal relationship obtained in this dissertation: hydraulic performance cannot be attributed to porosity alone. Tortuosity modifies both the viscous and inertial parts of the pressure loss and must therefore be considered together with porosity. The value of the substitute geometries is that they remove much of the morphological ambiguity present in commercial foams and make it possible to distinguish these effects independently. At the same time, the correlations are valid for the investigated family of geometries and should not be interpreted as universal correlations for arbitrary porous materials.
 
 \section{Experimental hydraulic characterization of real porous materials}
+\subsection*{Principal results}
 \begin{itemize}
-    \item Commercial porous samples were characterized using microscopy and pressure-drop measurements and described using Darcy--Forchheimer coefficients.
-    \item The experiments demonstrated that nominal descriptors such as porosity and PPI are not sufficient by themselves to uniquely predict the hydraulic behaviour of real porous structures.
-    \item Samples with similar nominal properties exhibited different pressure-loss characteristics because the hydraulic response is also governed by pore connectivity, strut morphology and tortuosity.
-    \item For engineering use, measured or validated values of permeability and the Forchheimer coefficient therefore provide a more reliable description than a single manufacturer-specified morphology parameter.
+    \item Commercial porous samples were characterized by microscopy and pressure-drop measurements and described using Darcy--Forchheimer parameters.
+    \item Materials with similar nominal porosity or PPI exhibited different pressure-loss characteristics.
+    \item Porosity and PPI were therefore insufficient as stand-alone descriptors for predicting the hydraulic response of the investigated real porous materials.
+    \item Measured permeability and Forchheimer coefficients provided a more useful engineering description of the tested samples than a single manufacturer-specified morphology parameter.
 \end{itemize}
+
+\subsection*{Interpretation}
+This experimental result provides an important qualification to the parametric numerical study. The controlled study shows that hydraulic behaviour can be related quantitatively to well-defined geometrical parameters, whereas the real materials demonstrate that common nominal descriptors do not contain enough information to reconstruct those governing geometrical features. In practical design, the missing information is associated with features such as pore connectivity, local constrictions, strut morphology and effective tortuosity. Consequently, real porous materials require either richer geometrical characterization or direct hydraulic calibration before their pressure losses can be predicted reliably.
 
 \section{MicroCT-based CFD of the real porous structure}
+\subsection*{Principal results}
 \begin{itemize}
-    \item A real porous structure reconstructed from micro-computed tomography was used directly for detailed CFD and conjugate heat-transfer analysis.
+    \item The real porous geometry reconstructed from micro-computed tomography was used directly for detailed CFD and conjugate heat-transfer analysis.
     \item The reconstructed model reproduced the measured hydraulic behaviour with a difference of approximately 17\,\% and the thermal response with a difference of approximately 6\,\% under the investigated validation conditions.
-    \item The material comparison showed a strong influence of solid thermal conductivity on heat spreading inside the porous structure. Copper distributed heat most effectively, whereas tin and alumina confined the thermal field closer to the loaded region.
-    \item The introduced effective heat-sink height $h_{\mathrm{eff90}}$ showed that only a limited region of the porous matrix adjacent to the heated wall contributes substantially to heat removal, particularly at higher inlet velocities. This result provides a direct design criterion for avoiding unnecessarily thick porous inserts.
+    \item The material comparison showed a strong effect of solid thermal conductivity on heat spreading inside the porous structure. Copper distributed heat most effectively, while lower-conductivity materials confined the thermal field closer to the heated region.
+    \item The effective heat-sink height $h_{\mathrm{eff90}}$ showed that only a limited region of the porous matrix adjacent to the heated wall contributes substantially to heat removal, particularly at higher inlet velocities.
 \end{itemize}
 
+\subsection*{Interpretation}
+The microCT study bridges the gap between the idealized and real material descriptions. Unlike a porous-zone model, the reconstructed geometry resolves the local flow paths and solid matrix directly and therefore captures effects that cannot be represented by porosity or PPI alone. The results also show that increasing the total porous volume does not necessarily increase useful heat transfer: once the thermally active region becomes thin relative to the total foam thickness, additional material contributes little to heat removal while it can still contribute to hydraulic resistance and manufacturing complexity. The quantity $h_{\mathrm{eff90}}$ is therefore useful primarily as a design interpretation of the simulations rather than as a universal material constant.
+
 \section{High-heat-flux proof-of-concept experiment}
+\subsection*{Principal results}
 \begin{itemize}
     \item A plain CuCrZr cooling channel and a channel containing a porous copper insert were compared experimentally under identical hydraulic boundary conditions.
-    \item The plain channel reached the boiling crisis at approximately 4~MW/m$^2$.
-    \item The porous configuration remained thermally stable up to 4.7~MW/m$^2$, at which point the available induction-heating power became the limiting factor. The absolute CHF of the porous configuration was therefore not reached in the experiment.
-    \item The experiment demonstrates an increased CHF margin of the porous configuration under the investigated conditions, while also showing the hydraulic penalty associated with the porous insert.
-    \item Post-test inspection identified the quality of the soldered thermal contact between the porous copper and CuCrZr body as an important practical limitation that must be controlled in future samples.
+    \item The plain channel reached boiling crisis at approximately 4~MW/m$^2$.
+    \item The porous configuration remained thermally stable up to 4.7~MW/m$^2$, where the available induction-heating power became the limiting factor. The absolute CHF of the porous configuration was therefore not determined.
+    \item The porous insert introduced a hydraulic penalty, while post-test inspection also identified the quality of the soldered thermal contact as an important manufacturing limitation.
 \end{itemize}
+
+\subsection*{Interpretation}
+The experiment provides a proof of concept rather than a complete CHF characterization. It demonstrates that, for the investigated samples and operating conditions, the porous channel sustained a heat flux above the CHF observed for the plain channel. It does not determine the absolute CHF enhancement factor and does not separate the contributions of capillary transport, phase redistribution, local mixing and solid heat spreading. The result is nevertheless important because it connects the preceding hydraulic and numerical studies to the high-heat-flux operating regime for which the cooling concept is ultimately intended.
+
+\pagebreak
+\part{Synthesis and Discussion of the Research Results}
+
+\section{Progression from controlled geometry to high-heat-flux demonstration}
+The four research work packages form a sequence of increasing geometrical and experimental realism. The substitute geometries first isolate the effects of porosity and tortuosity under controlled conditions. Experiments on commercial porous materials then show the limitation of transferring simple morphology descriptors directly to real structures. The microCT-based CFD resolves the actual geometry and provides local information about flow and heat transfer that cannot be obtained from bulk pressure-drop data alone. Finally, the high-heat-flux experiment tests whether the porous concept retains a thermal advantage when approaching boiling crisis.
+
+This progression is central to the interpretation of the dissertation. No single model or experiment is sufficient by itself. The idealized geometries are suitable for identifying trends, the hydraulic experiments are necessary for characterizing real materials, the microCT model explains local transport in the real structure, and the CHF experiment demonstrates the relevance of the concept under severe thermal loading.
+
+\section{Hydraulic resistance versus thermal benefit}
+The main engineering trade-off identified by the work is the competition between thermal enhancement and hydraulic resistance. Increasing the complexity or amount of porous material may increase internal heat-transfer area and promote liquid redistribution, but it simultaneously increases the pressure loss. The results therefore do not support maximizing porosity, foam thickness or surface area independently. A useful porous cooling design must be selected as a coupled hydraulic--thermal problem.
+
+The parametric correlations provide a quantitative description of this trade-off for the controlled geometries. The real-material experiments then show why this trade-off cannot be evaluated from porosity or PPI alone. For a practical component, permeability and inertial resistance must either be measured or obtained from a numerical model that resolves enough of the real geometry to reproduce the hydraulic behaviour.
+
+\section{Role of solid thermal conductivity and active porous volume}
+The microCT calculations show that the solid matrix participates directly in heat spreading and that this contribution depends strongly on material thermal conductivity. At the same time, the effective heat-sink-height analysis indicates that only a fraction of the total porous volume may carry most of the transferred heat. These two findings must be considered together: a high-conductivity matrix can distribute heat efficiently, but simply increasing the foam thickness does not guarantee additional benefit once the thermally active region is already contained within a much thinner layer.
+
+This result provides a direct design implication from the available data. Porous-layer thickness should be treated as an optimization variable and should not be chosen solely from manufacturing convenience or the assumption that more porous material automatically provides more cooling capacity.
+
+\section{Interpretation of the CHF proof of concept}
+The high-heat-flux experiment supports the use of porous structures close to the boiling limit, but the conclusion must remain within the experimental evidence. The plain channel reached CHF at approximately 4~MW/m$^2$, whereas the porous channel remained stable to the maximum applied heat flux of 4.7~MW/m$^2$. Because the heating system reached its power limit first, the CHF of the porous configuration is known only to be above the maximum heat flux achieved in this campaign.
+
+The experiment therefore demonstrates a higher \emph{observed operating margin} for the porous configuration, not a quantified universal CHF enhancement factor. The measurements also do not identify one unique physical mechanism responsible for the improvement. Capillary rewetting, flow redistribution, mixing and solid heat spreading remain plausible and mutually interacting mechanisms. Separating them would require additional dedicated experiments, which are outside the scope of this dissertation and are not necessary for the proof-of-concept conclusion established here.
+
+\section{Limits of generalization}
+The results define a consistent engineering picture but they should not be generalized beyond the investigated geometries, materials and operating conditions without validation. The fitted permeability and Forchheimer correlations describe the controlled substitute-geometry family. The commercial-foam experiments demonstrate that simpler nominal descriptors are insufficient for real materials. The microCT results apply to the reconstructed samples and boundary conditions, while the CHF experiment establishes a comparative result for the tested plain and porous channels rather than a universal porous-channel CHF correlation.
+
+These limitations do not reduce the value of the results; they define the appropriate level at which each result can be used. The main transferable outcome is therefore the combined methodology and design logic rather than one universal numerical coefficient.
 
 \pagebreak
 \part{Fulfilment of the Research Objectives and Scientific Contribution}
 
-The purpose of this chapter is not to repeat the individual results, but to evaluate whether the objectives and hypotheses formulated in the Introduction were fulfilled and to identify the original scientific contribution of the dissertation.
-
 \section{Fulfilment of the research objectives}
 
-\subsection{Objective 1: Develop and experimentally validate numerical models for porous cooling channels}
-\textbf{Status: Fulfilled.}
+\subsection{Objective 1: Develop and experimentally validate numerical models capable of predicting flow and heat transfer inside porous cooling channels}
+\textbf{Status: Fulfilled within the investigated geometries and operating range.}
 \begin{itemize}
-    \item Substitute-geometry CFD models were validated against additively manufactured reference samples.
-    \item A microCT-based model of the real structure was validated against both hydraulic and thermal measurements.
-    \item The work therefore provides numerical approaches at two different levels of geometrical fidelity: an efficient parametrized model for systematic studies and a detailed reconstructed model for local transport analysis.
+    \item The substitute-geometry CFD methodology was validated against additively manufactured reference samples using pressure-drop measurements.
+    \item The microCT-based model was validated against hydraulic measurements and against the measured thermal response.
+    \item Together, the two modelling levels provide a parametric tool for identifying trends and a detailed geometry-resolved tool for local transport analysis.
 \end{itemize}
 
 \subsection{Objective 2: Experimentally characterize the hydraulic and thermal behaviour of selected porous materials}
-\textbf{Status: Fulfilled within the investigated operating range.}
+\textbf{Status: Fulfilled for the selected materials and tested conditions.}
 \begin{itemize}
-    \item Hydraulic characteristics were measured for the investigated porous samples and reduced to Darcy--Forchheimer parameters.
-    \item Thermal behaviour was assessed through the validated microCT-based conjugate heat-transfer study and the high-heat-flux proof-of-concept experiment.
-    \item The available CHF experiment established a lower bound for the porous-channel performance rather than its absolute CHF because the induction-heating power limit was reached first.
+    \item Hydraulic characteristics of the investigated porous materials were measured and reduced to Darcy--Forchheimer parameters.
+    \item Thermal behaviour was assessed by comparison with the validated microCT-based conjugate heat-transfer model and by the high-heat-flux proof-of-concept experiment.
+    \item The porous-sample CHF itself was not reached; therefore the experiment defines a demonstrated lower bound of thermal performance rather than the absolute CHF of the porous configuration.
 \end{itemize}
 
-\subsection{Objective 3: Quantify the influence of microstructural parameters on pressure loss and heat transfer}
-\textbf{Status: Fulfilled, with an important qualification for real foams.}
+\subsection{Objective 3: Quantify the influence of key microstructural parameters on pressure losses and heat-transfer performance}
+\textbf{Status: Fulfilled for controlled geometries; only partially transferable to real foams.}
 \begin{itemize}
-    \item For controlled geometries, quantitative correlations between porosity, tortuosity, permeability and inertial resistance were obtained.
-    \item For real porous materials, the experiments showed that porosity and PPI alone are insufficient predictors. Connectivity, strut geometry and tortuosity must also be captured, or the hydraulic parameters must be measured directly.
-    \item The microCT study further demonstrated the role of solid thermal conductivity and active porous-layer thickness in heat removal.
+    \item Quantitative correlations between porosity, tortuosity, permeability and inertial resistance were obtained for the controlled geometry family.
+    \item Measurements on real porous samples showed that porosity and PPI alone are not sufficient to transfer these relationships directly to commercial foams.
+    \item The microCT analysis demonstrated the importance of solid thermal conductivity and of the thermally active porous-layer thickness for heat transfer.
 \end{itemize}
 
-\subsection{Objective 4: Assess advantages and limitations relative to conventional high-heat-flux cooling concepts}
-\textbf{Status: Partially fulfilled experimentally and completed by engineering comparison.}
+\subsection{Objective 4: Assess advantages and limitations of porous cooling channels relative to conventional high-heat-flux cooling concepts}
+\textbf{Status: Partially fulfilled by direct experiment and completed by engineering interpretation.}
 \begin{itemize}
-    \item The principal demonstrated advantage is the increased CHF margin relative to the tested plain channel together with enhanced internal heat-transfer area and liquid redistribution.
-    \item The principal disadvantages are increased pressure loss, strong sensitivity to microstructure and the additional manufacturing challenge of obtaining a reliable thermal joint between the porous insert and the cooled wall.
-    \item The dissertation does not contain a direct experimental comparison with swirl-tube or hypervapotron geometries; comparison with these established concepts is therefore based on the literature review rather than on a common experimental campaign.
+    \item The direct experiment demonstrated a higher observed heat-flux margin for the porous channel than for the tested plain CuCrZr channel.
+    \item The principal limitations identified experimentally and numerically are higher pressure loss, sensitivity to microstructure and the quality of the thermal joint between the porous insert and the cooled wall.
+    \item No direct common-rig comparison with swirl-tube or hypervapotron geometries was performed; conclusions relative to these established concepts therefore remain based on the literature review and engineering comparison rather than a direct experiment.
 \end{itemize}
 
-\subsection{Objective 5: Formulate design and optimization recommendations}
-\textbf{Status: Fulfilled.}
+\subsection{Objective 5: Formulate recommendations for design and optimization of porous cooling structures}
+\textbf{Status: Fulfilled on the basis of the combined numerical and experimental results.}
 \begin{itemize}
-    \item Do not select porous materials using porosity or PPI alone; use measured/validated permeability and Forchheimer coefficients together with geometrical characterization.
-    \item Optimize hydraulic resistance and heat-transfer enhancement simultaneously, because improving one quantity by increasing the amount or complexity of porous material can penalize the other.
-    \item Avoid porous layers substantially thicker than the thermally active region identified by $h_{\mathrm{eff90}}$ unless another design requirement justifies the additional material.
-    \item Treat the thermal contact between the porous insert and the cooled wall as a primary design parameter rather than as a secondary manufacturing detail.
-    \item For final component design, combine pressure-drop experiments or validated CFD with conjugate heat-transfer analysis and high-heat-flux testing under representative operating conditions.
+    \item Porous materials should not be selected from porosity or PPI alone; permeability and Forchheimer resistance should be measured or validated numerically.
+    \item Hydraulic resistance and heat-transfer enhancement must be optimized simultaneously.
+    \item Porous layers substantially thicker than the thermally active region identified by $h_{\mathrm{eff90}}$ should be avoided unless another design requirement justifies the added material.
+    \item Thermal contact between the porous insert and the cooled wall must be treated as a primary design parameter.
+    \item Final component assessment should combine hydraulic characterization, validated CFD and high-heat-flux testing rather than relying on one morphology descriptor or one porous-medium correlation.
 \end{itemize}
 
 \section{Evaluation of the research hypotheses}
@@ -4134,45 +4173,50 @@ The purpose of this chapter is not to repeat the individual results, but to eval
 \subsection{H1: Hydraulic resistance does not constitute a fundamental limitation if the porous geometry is optimized}
 \textbf{Evaluation: Supported within the investigated parameter range.}
 
-The porous structures produced substantially higher hydraulic losses than smooth channels, but these losses were systematically related to the geometry through permeability and the Forchheimer coefficient. The results show that hydraulic resistance is a critical design constraint, but not an intrinsically prohibitive one when the porous structure and operating point are optimized together.
+The investigated porous structures produced higher hydraulic losses than smooth channels, but these losses varied systematically with geometry and were described by permeability and the Forchheimer coefficient. The results therefore support the hypothesis that hydraulic resistance is a design constraint rather than an automatic disqualification of the concept. The conclusion is limited to the investigated geometries and operating range and does not imply that every porous structure is hydraulically acceptable.
 
-\subsection{H2: Microstructural characteristics can be used to predict hydraulic behaviour}
-\textbf{Evaluation: Partially confirmed.}
+\subsection{H2: Microstructural characteristics can be used to predict hydraulic behaviour prior to flow testing}
+\textbf{Evaluation: Not confirmed in its original general form.}
 
-The controlled numerical study established clear quantitative relationships between porosity, tortuosity and hydraulic parameters. The experiments on real foams, however, showed that porosity and PPI alone do not uniquely determine the hydraulic response. The hypothesis is therefore valid only when the microstructural description is sufficiently rich to include the geometrical features controlling flow resistance.
+For the controlled substitute geometries, porosity and tortuosity were quantitatively related to hydraulic parameters. For the real porous materials, however, the descriptors available from conventional characterization, particularly porosity and PPI, did not uniquely determine the measured hydraulic response. The hypothesis is therefore valid only when the microstructural description contains the geometrical information that actually controls flow resistance, or when the material is calibrated directly by hydraulic testing. This negative qualification is itself an important result of the dissertation because it identifies the limit of simplified morphology-based prediction.
 
 \subsection{H3: Porous structures increase the critical heat-flux margin}
-\textbf{Evaluation: Supported qualitatively; the absolute porous-channel CHF was not determined.}
+\textbf{Evaluation: Supported by the comparative proof of concept, but not quantified as an absolute CHF enhancement factor.}
 
-The plain channel reached CHF at approximately 4~MW/m$^2$, whereas the porous sample remained stable at 4.7~MW/m$^2$. The experiment therefore demonstrates an increased CHF margin under the investigated conditions. Because the available heating power was exhausted before CHF occurred in the porous sample, the exact enhancement factor cannot be stated from the present dataset.
+The plain channel reached CHF at approximately 4~MW/m$^2$, whereas the porous sample remained stable at 4.7~MW/m$^2$. The experiment therefore supports the hypothesis that the porous configuration can extend the operating margin before boiling crisis under the investigated conditions. Because the heating-power limit was reached before CHF occurred in the porous sample, the absolute porous-channel CHF and the exact enhancement factor were not determined.
 
 \section{Original scientific contribution}
-The principal original contributions of the dissertation are summarized as follows:
+The original scientific contribution of the dissertation can be summarized in five connected points:
 \begin{enumerate}
-    \item Quantitative correlations linking controlled porous geometry, porosity and tortuosity to Darcy--Forchheimer hydraulic parameters over a broad investigated porosity range.
-    \item Demonstration that conventional nominal foam descriptors such as porosity and PPI are insufficient for reliable hydraulic prediction of real porous materials without additional morphological information or direct calibration.
-    \item Development and validation of a microCT-based CFD methodology that resolves the real porous geometry and enables local conjugate heat-transfer analysis, including the definition of the effective heat-sink height $h_{\mathrm{eff90}}$.
-    \item Experimental proof of concept showing a higher demonstrated CHF margin for a porous copper cooling channel than for a plain CuCrZr channel under the investigated boundary conditions.
-    \item A combined numerical--experimental design framework in which porous cooling structures are evaluated simultaneously from the hydraulic, thermal and manufacturability perspectives.
+    \item \textbf{Controlled hydraulic correlations.} Quantitative relationships were obtained between porosity, tortuosity and Darcy--Forchheimer hydraulic parameters for the investigated substitute-geometry family, allowing the independent effects of these geometrical variables to be interpreted.
+    \item \textbf{Identification of the limit of nominal foam descriptors.} Experiments on real porous materials demonstrated that porosity and PPI alone are insufficient for reliable prediction of hydraulic behaviour, establishing the need for richer morphology information or direct hydraulic calibration.
+    \item \textbf{Geometry-resolved microCT methodology.} A microCT-based CFD approach was developed and validated for both hydraulic and thermal behaviour of the real porous structure, enabling local transport mechanisms to be studied without replacing the foam by a homogeneous porous zone.
+    \item \textbf{Effective heat-sink-height interpretation.} The quantity $h_{\mathrm{eff90}}$ was used to describe the thermally active part of the porous structure and to show that additional foam thickness does not necessarily produce a proportional thermal benefit.
+    \item \textbf{High-heat-flux proof of concept.} A porous copper cooling channel sustained the maximum applied heat flux of 4.7~MW/m$^2$ without reaching CHF, while the plain reference channel reached CHF at approximately 4~MW/m$^2$, demonstrating a higher observed operating margin of the porous concept under the investigated conditions.
 \end{enumerate}
+
+The broader contribution is the connection of these five results into one design framework. The dissertation shows that a porous cooling channel cannot be assessed from thermal performance or morphology alone: geometrical characterization, hydraulic resistance, local heat transfer, material conductivity, thermal contact and boiling-limit behaviour must be considered together.
 
 \pagebreak
 \part{Conclusion}
 
 \section{Main conclusions}
 \begin{enumerate}
-    \item Porous cooling channels can extend the thermal operating envelope of water-cooled high-heat-flux components, but the benefit is inseparable from increased hydraulic resistance.
-    \item The hydraulic response of real porous media cannot be predicted reliably from porosity or PPI alone. Permeability, inertial resistance and a sufficiently detailed description of the real microstructure are required.
-    \item Detailed microCT-based simulations show that only part of the porous volume may be thermally active. Consequently, increasing the porous-layer thickness does not automatically improve heat removal and can unnecessarily increase pressure loss and material volume.
-    \item The proof-of-concept experiment demonstrated a higher CHF margin for the porous sample: the plain channel reached CHF at approximately 4~MW/m$^2$, while the porous channel remained stable up to the experimental limit of 4.7~MW/m$^2$.
-    \item The practical performance of a porous cooling concept depends not only on the porous morphology but also on manufacturing quality, particularly the thermal contact between the porous insert and the cooled structural material.
+    \item Porous cooling structures provide a credible route to extending the thermal operating margin of water-cooled high-heat-flux components, but the thermal benefit is coupled directly to increased hydraulic resistance.
+    \item For controlled geometries, porosity and tortuosity provide a strong quantitative description of hydraulic behaviour. For real foams, common nominal parameters such as porosity and PPI are not sufficient by themselves, and hydraulic calibration or richer geometrical information is required.
+    \item Geometry-resolved microCT simulations show that solid thermal conductivity and the thickness of the thermally active porous region strongly influence heat removal. Increasing total foam thickness alone is therefore not a reliable route to higher performance.
+    \item The high-heat-flux proof-of-concept experiment demonstrated a higher observed operating margin for the porous channel: the plain reference reached CHF at approximately 4~MW/m$^2$, whereas the porous channel remained stable up to the available experimental limit of 4.7~MW/m$^2$.
+    \item The performance of a practical porous cooling component depends not only on pore morphology but also on manufacturing quality, particularly the thermal contact between the porous insert and the structural material.
 \end{enumerate}
 
-\section{Engineering implication}
-The results support porous materials as a credible candidate for advanced fusion cooling channels, particularly in applications where maintaining liquid contact with the heated wall close to the boiling limit is more important than minimizing pumping power. The most promising design route is therefore not to maximize porosity, surface area or foam thickness independently, but to optimize the complete coupled system: microstructure, hydraulic operating point, thermally active layer thickness, material conductivity and the thermal joint to the cooled wall.
+\section{Design implications}
+The results indicate that porous cooling structures should be designed as coupled hydraulic--thermal systems. The objective is not to maximize one parameter such as porosity, surface area or foam thickness, but to select a structure that provides an acceptable balance between permeability, inertial resistance, active heat-transfer volume, solid heat spreading and manufacturing quality. The combined use of hydraulic measurements, validated CFD and high-heat-flux testing provides a practical route for this optimization.
 
-\section{Scope of the conclusion}
-The dissertation establishes the hydraulic trends, validates numerical approaches at multiple geometrical scales and demonstrates an increased CHF margin in a proof-of-concept experiment. It does not determine the absolute CHF of the porous configuration under reactor-relevant conditions, nor does it provide a direct experimental comparison with established swirl-tube or hypervapotron concepts. These points define the most important continuation of the work rather than invalidating the conclusions reached within the investigated parameter range.
+\section{Scope of the conclusions}
+The conclusions are restricted to the investigated samples, geometries and operating conditions. The work does not provide a universal porous-medium pressure-loss correlation, does not determine the absolute CHF of the porous proof-of-concept sample and does not experimentally compare the porous concept with swirl-tube or hypervapotron channels in a common test rig. These are boundaries of the available dataset, not missing steps required to support the principal conclusions of this dissertation.
+
+\section{Overall outcome}
+Taken together, the work demonstrates why porous cooling cannot be reduced to the simple statement that a larger internal area produces better heat transfer. The hydraulic response depends on the real flow-path geometry, the thermal response depends on both fluid transport and solid heat spreading, and the useful porous volume can be substantially smaller than the total installed volume. Within these constraints, the proof-of-concept experiment shows that the concept can provide additional margin close to the boiling limit. The principal outcome of the dissertation is therefore a physically consistent route from porous microstructure to hydraulic characterization, local heat-transfer analysis and high-heat-flux performance assessment.
 
 \pagebreak
 
@@ -4188,13 +4232,5 @@ The dissertation establishes the hydraulic trends, validates numerical approache
 \listoftables
 \newpage
 \pagenumbering{arabic}
-
-\clearpage
-\part{Appendices}
-\section*{Publications forming the basis of the dissertation}
-\addcontentsline{toc}{section}{Publications forming the basis of the dissertation}
-\doplnit{Do odevzdávané verze vložit plné texty publikací tvořících podklad disertace. Jejich PDF soubory nejsou v repozitáři, proto je nelze vložit automaticky.}
-
-Their complete bibliographic records, with all authors listed, are provided in the preceding section \textit{Publications of the Author}.
 
 \end{document}
