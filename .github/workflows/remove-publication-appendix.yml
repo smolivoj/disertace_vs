@@ -1,0 +1,35 @@
+name: Remove publication appendix
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/scripts/remove_publication_appendix.py'
+      - '.github/workflows/remove-publication-appendix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Remove appendix block
+        run: python .github/scripts/remove_publication_appendix.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reserse.tex
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Remove unnecessary publication appendix"
+            git push
+          fi
