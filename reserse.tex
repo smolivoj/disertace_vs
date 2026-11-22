@@ -1833,7 +1833,7 @@ For each tortuosity level, the calculated pressure drop values are shown as disc
   \label{fig:gr_tor2}
 \end{figure}
 
-This chapter presents the results of numerical study for Tortuosity = 1 and Tortuosity = 2, which are the two extreme cases of the investigated range. The intermediate tortuosity levels exhibit similar trends, with the pressure drop characteristics falling between the two presented cases. A complete overview of the pressure drop characteristics for all investigated tortuosity levels is provided in Appendix A.
+This chapter presents the results of numerical study for Tortuosity = 1 and Tortuosity = 2, which are the two extreme cases of the investigated range. The intermediate tortuosity levels exhibit similar trends, with the pressure drop characteristics falling between the two presented cases. A complete overview of the pressure drop characteristics for all investigated tortuosity levels is provided in Appendix~\ref{app:substitute-results}.
 \pagebreak
 
 \subsection{Parametric study results -- permeability and Forchheimer coefficient}
@@ -1897,7 +1897,7 @@ logarithmic representation of the hydraulic parameters was used in the
 subsequent regression analysis.
 
 The complete graphical results obtained for all evaluated tortuosity
-definitions are provided in Appendix~1. The discussion in the present section
+definitions are provided in Appendix~\ref{app:substitute-results}. The discussion in the present section
 is focused on the tortuosity definition that produced the most representative
 correlation with the hydraulic parameters.
 
@@ -2325,7 +2325,7 @@ produce different numerical values.
 
 The complete results obtained using all evaluated tortuosity definitions,
 including the corresponding graphical comparisons and regression results, are
-provided in Appendix~1.
+provided in Appendix~\ref{app:substitute-results}.
 
 Other microstructural parameters could potentially improve the predictive
 accuracy. These include characteristic pore diameter, pore-throat diameter,
@@ -2716,7 +2716,7 @@ The optical micrographs also reveal clear differences between the metallic and c
 The following section presents the hydraulic performance of the investigated porous material samples obtained using the experimental facility described in the previous chapter. Pressure drop measurements were performed over a wide range of mass flow rates in order to quantify the flow resistance of each material and to evaluate the influence of pore morphology and material structure on hydraulic behaviour. The experimental results are first presented individually for each sample group, allowing direct comparison of materials with similar manufacturing characteristics. Subsequently, the measured data are analysed using the Darcy--Forchheimer approach to determine the permeability and inertial resistance coefficients, which are later compared with the numerical predictions and existing correlations reported in the literature.
 
 \subsubsection{Pressure drop characteristics}
-The measured pressure drop as a function of a flow velocity for the investigated porous materials is presented in Figures~\ref{fig:foam_results_A} and \ref{fig:foam_results_B}. Only sets A and B are presented in this section, all results are shown in Appendix B. To facilitate comparison, the results are grouped according to the individual sample sets introduced in the previous section. Each graph contains three specimens manufactured from the same material or using the same production route, allowing the influence of variations in the porous microstructure to be evaluated while minimizing the effect of material composition. The pressure drop characteristics provide the primary experimental dataset used for the subsequent determination of permeability and the Forchheimer coefficient.
+The measured pressure drop as a function of a flow velocity for the investigated porous materials is presented in Figures~\ref{fig:foam_results_A} and \ref{fig:foam_results_B}. Only sets A and B are presented in this section, all results are shown in Appendix~\ref{app:experimental-results}. To facilitate comparison, the results are grouped according to the individual sample sets introduced in the previous section. Each graph contains three specimens manufactured from the same material or using the same production route, allowing the influence of variations in the porous microstructure to be evaluated while minimizing the effect of material composition. The pressure drop characteristics provide the primary experimental dataset used for the subsequent determination of permeability and the Forchheimer coefficient.
 
 \begin{figure}[h]
   \includegraphics[width=13cm]{group_A_pressure_drop_velocity.png}
@@ -4048,12 +4048,12 @@ This chapter collects the principal outputs of the four research work packages. 
 \subsection*{Principal results}
 \begin{itemize}
     \item A controlled family of substitute porous geometries was used to isolate the influence of porosity $\varepsilon$ and tortuosity $\tau$ on hydraulic resistance.
-    \item Permeability increased with porosity and decreased with tortuosity. The fitted relationship was
+    \item Permeability increased with porosity and decreased with tortuosity. The fitted relationship (Equation~\ref{eq:final_permeability_correlation}) was
     \[
     K = 9.439\times10^{-7}\,\tau^{-3.091}\varepsilon^{3.143}\;\mathrm{m^2},
     \qquad R^2_{\log K}=0.9531.
     \]
-    \item The inertial contribution represented by the Forchheimer coefficient followed the opposite tendency,
+    \item The inertial contribution represented by the Forchheimer coefficient (Equation~\ref{eq:final_forchheimer_correlation}) followed the opposite tendency,
     \[
     \beta = 6.801\times10^{1}\,\tau^{1.661}\varepsilon^{-2.709}\;\mathrm{m^{-1}},
     \qquad R^2_{\log \beta}=0.9549.
@@ -4158,7 +4158,7 @@ These limitations do not reduce the value of the results; they define the approp
 \end{itemize}
 
 \subsection{Objective 4: Assess advantages and limitations of porous cooling channels relative to conventional high-heat-flux cooling concepts}
-\textbf{Status: Partially fulfilled by direct experiment and completed by engineering interpretation.}
+\textbf{Status: Partially fulfilled.}
 \begin{itemize}
     \item The direct experiment demonstrated a higher observed heat-flux margin for the porous channel than for the tested plain CuCrZr channel.
     \item The principal limitations identified experimentally and numerically are higher pressure loss, sensitivity to microstructure and the quality of the thermal joint between the porous insert and the cooled wall.
@@ -4178,9 +4178,9 @@ These limitations do not reduce the value of the results; they define the approp
 \section{Evaluation of the research hypotheses}
 
 \subsection{H1: Hydraulic resistance does not constitute a fundamental limitation if the porous geometry is optimized}
-\textbf{Evaluation: Supported within the investigated parameter range.}
+\textbf{Evaluation: Partially supported; practical hydraulic feasibility was not established for a reactor component.}
 
-The investigated porous structures produced higher hydraulic losses than smooth channels, but these losses varied systematically with geometry and were described by permeability and the Forchheimer coefficient. The results therefore support the hypothesis that hydraulic resistance is a design constraint rather than an automatic disqualification of the concept. The conclusion is limited to the investigated geometries and operating range and does not imply that every porous structure is hydraulically acceptable.
+The numerical and experimental results show that hydraulic resistance is quantifiable and depends systematically on porosity, tortuosity and real pore morphology. They support the possibility of selecting geometries with more favourable hydraulic characteristics. However, the present work does not establish an optimized practical component or demonstrate that its additional pumping power is acceptable under reactor operating conditions. The geometry-dependence of the pressure loss is therefore supported, whereas the broader engineering claim that hydraulic resistance does not constitute a fundamental limitation remains unverified by the available results.
 
 \subsection{H2: Microstructural characteristics can be used to predict hydraulic behaviour prior to flow testing}
 \textbf{Evaluation: Not confirmed in its original general form.}
@@ -4205,6 +4205,11 @@ The original scientific contribution of the dissertation can be summarized in fi
 The broader contribution is the connection of these five results into one design framework. The dissertation shows that a porous cooling channel cannot be assessed from thermal performance or morphology alone: geometrical characterization, hydraulic resistance, local heat transfer, material conductivity, thermal contact and boiling-limit behaviour must be considered together.
 
 \pagebreak
+\section{Author's contribution to the presented research}
+For the publications in which the dissertation author is the first author, the author performed the experimental and numerical research reported in those publications. The complete lists of coauthors are retained in the bibliography. The original scientific contributions stated above refer to the work presented and evaluated in this dissertation.
+
+\pagebreak
+
 \part{Conclusion}
 
 \section{Main conclusions}
@@ -4239,5 +4244,90 @@ Taken together, the work demonstrates why porous cooling cannot be reduced to th
 \listoftables
 \newpage
 \pagenumbering{arabic}
+
+\clearpage
+\appendix
+\part{Appendices}
+
+\section{Complete pressure-drop characteristics of substitute porous geometries}
+\label{app:substitute-results}
+
+The following figures collect the complete set of pressure-drop characteristics for the five simulated tortuosity levels. Their trends, validation and correlations are discussed in the substitute-geometry chapter. No additional computations were performed for this appendix.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=14cm]{gr_tor1.png}
+  \caption{Resulting pressure-drop characteristics for a tortuosity of 1.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=14cm]{gr_tor125.png}
+  \caption{Resulting pressure-drop characteristics for a tortuosity of 1.25.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=14cm]{gr_tor15.png}
+  \caption{Resulting pressure-drop characteristics for a tortuosity of 1.5.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=14cm]{gr_tor175.png}
+  \caption{Resulting pressure-drop characteristics for a tortuosity of 1.75.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=14cm]{gr_tor2.png}
+  \caption{Resulting pressure-drop characteristics for a tortuosity of 2.}
+\end{figure}
+
+% Vysází všechny čekající obrázky z Appendix A
+% a teprve potom začne Appendix B.
+\clearpage
+
+\section{Complete hydraulic measurements of commercial porous samples}
+\label{app:experimental-results}
+
+The following figures collect the measured pressure-drop characteristics for all five sample groups (A--E). Sets A and B are also shown in the main text, and are repeated here for completeness.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=10cm]{group_A_pressure_drop_velocity.png}
+  \caption{Pressure drop across the porous zone for sample set A.}
+  \label{fig:appendix_foam_A}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=10cm]{group_B_pressure_drop_velocity.png}
+  \caption{Pressure drop across the porous zone for sample set B.}
+  \label{fig:appendix_foam_B}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=10cm]{group_C_pressure_drop_velocity.png}
+  \caption{Pressure drop across the porous zone for sample set C.}
+  \label{fig:appendix_foam_C}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=10cm]{group_D_pressure_drop_velocity.png}
+  \caption{Pressure drop across the porous zone for sample set D.}
+  \label{fig:appendix_foam_D}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=10cm]{group_E_pressure_drop_velocity.png}
+  \caption{Pressure drop across the porous zone for sample set E.}
+  \label{fig:appendix_foam_E}
+\end{figure}
+
+\clearpage
 
 \end{document}
