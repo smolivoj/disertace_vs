@@ -40,7 +40,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{float}
-\usetikzlibrary{arrows.meta, positioning}
+\usetikzlibrary{arrows.meta, positioning, decorations.pathmorphing}
 \usepackage{pgfplotstable}
 \pgfplotsset{compat=1.18}
 \usepgfplotslibrary{fillbetween}
@@ -3904,7 +3904,14 @@ Heating method & Electromagnetic induction \\
 \label{tab:hefel_parameters}
 \end{table}
 
-\doplnit{Vložit schéma experimentální smyčky HEFEL. Ve schématu vyznačit směr proudění, hlavní komponenty smyčky, testovací sekci, měření průtoku, tlaku a teploty a polohu indukčního ohřevu. Schéma není v dostupných podkladech, proto jej nelze korektně doplnit automaticky.}
+\begin{figure}[htbp]
+  \centering
+  \resizebox{0.94\textwidth}{!}{\input{hefel_schematic.tex}}
+  \caption{Schematic of the HEFEL experimental loop with the test section, pressure and temperature measurement points, induction heater, flowmeter, circulation pump, electric heater and cooler. Redrawn after \mycite{Smolk2023}, Fig.~2 (left).}
+  \label{fig:hefel_schematic}
+\end{figure}
+
+The HEFEL loop is illustrated in Figure~\ref{fig:hefel_schematic}. The sample is installed in a replaceable test section and heated by electromagnetic induction. The flowmeter and the pressure and temperature instrumentation allow the hydraulic and thermal response of the sample to be assessed, while the pump, cooler and auxiliary heater provide the required coolant circulation and temperature control.
 
 \begin{figure}[ht!]
   \centering
