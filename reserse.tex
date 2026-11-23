@@ -75,6 +75,8 @@
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
+\newcommand{\thesistitle}{Thermohydraulic parameters of porous material based cooling channels}
+\hypersetup{pdftitle={\thesistitle},pdfauthor={Vojtěch Smolík}}
 \begin{document}
 
 
@@ -87,8 +89,7 @@
 
     \includegraphics[width=9cm]{logo_cvut.jpg}
     \section*{Ph.D. Thesis}
-    \subsection*{High heat flux cooling in nuclear fusion:}
-    \subsection*{Porous material based cooling channels}
+    \subsection*{\thesistitle}
 
     \vspace*{6cm}
     
@@ -101,19 +102,18 @@
 \thispagestyle{empty}
 \begin{center}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r}
-\textbf{Czech Technical University} & České Vysoké Učení Technické \\
+\textbf{Czech Technical University} & České vysoké učení technické \\
 \textbf{in Prague} & v Praze \\
-\textbf{Faculty of Mechanical Engineering} & Fakulta Strojní \\
-\textbf{Department of Energetics} & Ústav Energetiky \\
+\textbf{Faculty of Mechanical Engineering} & Fakulta strojní \\
+\textbf{Department of Energetics} & Ústav energetiky \\
 \textbf{Energy Engineering} & Energetika \\
 \end{tabular*}
 
 \vspace*{4.2cm}
-{\Large\bfseries Thermohydraulic parameters\\[0.25em]
-of porous material based cooling channels\par}
+{\Large\bfseries \thesistitle\par}
 
 \vspace{0.9cm}
-{\large Termohydraulické parametry chladících kanálů\\[0.25em]
+{\large Termohydraulické parametry chladicích kanálů\\[0.25em]
 s využitím pórovitých materiálů\par}
 
 \vfill
@@ -122,7 +122,7 @@ s využitím pórovitých materiálů\par}
 \textbf{Author}\\[0.15em]
 {\large Ing. Vojtěch Smolík}\\[0.65em]
 \textbf{Supervisor}\\[0.15em]
-{\large Doc. Ing. Slavomír Entler, Ph.D.}\\[0.65em]
+{\large doc. Ing. Slavomír Entler, Ph.D.}\\[0.65em]
 \textbf{Supervisor-consultant}\\[0.15em]
 {\large doc. Ing. Pavel Zácha, Ph.D.}
 \end{minipage}
@@ -137,7 +137,7 @@ This dissertation investigates the hydraulic and thermal behaviour of porous-mat
 \bigskip
 \section*{Abstrakt}
 \addcontentsline{toc}{section}{Abstrakt}
-Disertační práce se zabývá hydraulickými a tepelnými vlastnostmi chladicích kanálů s porézními materiály pro aplikace s vysokými tepelnými toky v jaderné fúzi. Výzkum propojuje parametrické CFD výpočty, experimentální charakterizaci skutečných porézních materiálů, simulace reálné geometrie získané mikro-výpočetní tomografií a ověřovací experiment při vysokém tepelném zatížení. Pro idealizované porézní geometrie byly stanoveny vztahy mezi porozitou, tortuozitou, permeabilitou a Forchheimerovým koeficientem. Měření skutečných porézních materiálů ukázala, že samotná nominální porozita a počet pórů na palec nepostačují ke spolehlivé předpovědi tlakových ztrát. Model založený na microCT byl validován pomocí hydraulických a tepelných měření a využit k posouzení vlivu tepelné vodivosti pevné fáze a efektivní výšky tepelně aktivní části porézní struktury. Ve srovnávacím experimentu nastala u hladkého kanálu krize varu přibližně při 4~MW/m$^2$, zatímco porézní kanál zůstal stabilní až do dosaženého tepelného toku 4,7~MW/m$^2$. Skutečná mez kritického tepelného toku porézního kanálu nebyla určena. Práce vymezuje přínosy porézního chlazení i hydraulická, geometrická a výrobní omezení, která je nutné zohlednit při návrhu.
+Disertační práce se zabývá hydraulickými a tepelnými vlastnostmi chladicích kanálů s porézními materiály pro aplikace s vysokými tepelnými toky v jaderné fúzi. Výzkum propojuje parametrické CFD výpočty, experimentální charakterizaci skutečných porézních materiálů, simulace proudění v geometrii rekonstruované z dat výpočetní mikrotomografie a ověřovací experiment při vysokém tepelném zatížení. Pro idealizované porézní geometrie byly stanoveny vztahy mezi porozitou, tortuozitou, permeabilitou a Forchheimerovým koeficientem. Měření skutečných porézních materiálů ukázala, že samotná nominální porozita a počet pórů na palec nepostačují ke spolehlivé předpovědi tlakových ztrát. Model založený na těchto datech byl validován pomocí hydraulických a tepelných měření a využit k posouzení vlivu tepelné vodivosti pevné fáze a efektivní výšky tepelně aktivní části porézní struktury. Ve srovnávacím experimentu nastala u hladkého kanálu krize varu přibližně při 4~MW/m$^2$, zatímco porézní kanál zůstal stabilní až do dosaženého tepelného toku 4,7~MW/m$^2$. U porézního kanálu nebylo kritického tepelného toku dosaženo. Práce vymezuje přínosy porézního chlazení i hydraulická, geometrická a výrobní omezení, která je nutné zohlednit při návrhu.
 
 \noindent\textbf{Klíčová slova:} jaderná fúze; vysoký tepelný tok; porézní materiály; chladicí kanály; tlaková ztráta; CFD; krize varu.
 
@@ -171,7 +171,7 @@ TEALC & Thermohydraulic Experiment for Advanced Liquid Cooling \\
 TF & Toroidal Field \\
 WCLL & Water-Cooled Lithium-Lead \\
 WDS & Wavelength-Dispersive Spectroscopy \\
-$\mu$CT & Micro-computed Tomography \\
+microCT & Micro-computed tomography \\
 \end{tabular}
 \pagebreak
 
@@ -280,7 +280,7 @@ Among practically relevant fuel cycles, the D--T reaction reaches useful reactiv
 \end{equation}
 where D and T denote deuterium and tritium, respectively, ${}^{4}\mathrm{He}$ is the alpha particle and $\mathrm{n}$ is the neutron. The kinetic energies carried by the reaction products are shown in parentheses.
 
-\pagebreak
+
 \subsection{Magnetic confinement - Tokamak design}
 The tokamak is characterized by its axisymmetric toroidal geometry, which makes it considerably simpler to design and manufacture than a stellarator.
 The vacuum vessel is surrounded by several independent coil systems serving different purposes during plasma operation.
@@ -702,7 +702,7 @@ The closer the curves are to each other, the smaller the convective loads are.
 \begin{figure}[h]
   \includegraphics[width=14cm]{zaznam_vykonu.png}
   \centering
-  \caption{W7-x power measurement during the pulse \cite{Grulke2024}.}
+  \caption{W7-X power measurement during the pulse \cite{Grulke2024}.}
   \label{fig:w7xzaznam}
 \end{figure}
 
@@ -735,7 +735,7 @@ This simplified method of heat flux profile calculation is helpful in the heat l
 \begin{figure}[h]
   \includegraphics[width=13cm]{image9.png}
   \centering
-  \caption{W7x cross section heat load profile.}
+  \caption{W7-X cross section heat load profile.}
   \label{fig:w7xtokprofil}
 
 \end{figure}
@@ -776,7 +776,7 @@ ECRH heating source also creates an area of increased heat flux on the first wal
 \begin{figure}[h]
   \includegraphics[width=11cm]{novy_profil.png}
   \centering
-  \caption{W7-x NBI Beam dump area heat load. Sources s78 are shifted in a downward direction from the nominal position to include assembly imperfections.}
+  \caption{W7-X NBI Beam dump area heat load. Sources s78 are shifted in a downward direction from the nominal position to include assembly imperfections.}
   \label{fig:nbi_dump}
 \end{figure}
 
@@ -812,7 +812,7 @@ This mechanical stress can lead to damage of the NBI targeted tile in a short pe
 \begin{figure}[h]
   \includegraphics[width=15cm]{image1.png}
   \centering
-  \caption{Temperature profile of the W7x NBI beam dump graphite tile after being targeted for 1.5 s by the NBI heat load \cite{Dublin_vojta}.}
+  \caption{Temperature profile of the W7-X NBI beam dump graphite tile after being targeted for 1.5 s by the NBI heat load \cite{Dublin_vojta}.}
   \label{fig:nbi_tile3}
 \end{figure}
 
@@ -1106,7 +1106,7 @@ Porosity ($\Phi$) is a fundamental property of porous materials, defined as the 
 Porosity can be expressed as: 
 
 \begin{equation}
-  \Phi = \dfrac{V_p}{V_t}
+  \Phi = \dfrac{V_p}{V_t}\label{eq:void-fraction}
 \end{equation}
 
 \noindent Porosity is typically expressed as a dimensionless fraction (ranging from 0 to 1) or as a percentage. 
@@ -1124,7 +1124,7 @@ PPI can be expressed as:
  
 \noindent In porous materials, a higher PPI value signifies a greater number of smaller pores per inch, leading to a finer structure. Conversely, a lower PPI value indicates fewer, larger pores, resulting in a coarser structure.
 PPI is a critical parameter in applications such as filtration, where the pore size distribution impacts the material's ability to filter particles, and in acoustic insulation, where it affects sound absorption properties. The PPI value is often used alongside porosity to fully characterize the microstructure of porous materials in various scientific and engineering contexts.
-An example of materials with variable PPI dimensions are shown in Figure Figure \ref{fig:ppi}.
+An example of materials with variable PPI dimensions are shown in Figure \ref{fig:ppi}.
 
 \begin{figure}[h]
   \centering
@@ -1151,7 +1151,7 @@ Mathematically, tortuosity can be defined as the ratio of the actual path length
 Figure \ref{fig:tort} represents the mentioned values in a 2D plot.
 
 \begin{equation}
-  \tau = \dfrac{\Delta l}{\Delta x} 
+  \tau = \dfrac{\Delta l}{\Delta x}\label{eq:path-tortuosity}
 \end{equation}
 
 \noindent Tortuosity is always greater than or equal to 1, with a value of 1 indicating a perfectly straight path (no deviation) and higher values indicating more complex, winding pathways.
@@ -1373,7 +1373,7 @@ Forchheimer coefficient \cite{Yang2021}\cite{Calmidi}:
     \label{eq:DF3}
 \end{equation}
 
-\pagebreak
+
 \subsection{Substitute geometry}
 
 The simplification of porous structures into substitute geometries is a modeling approach that helps to predict fluid dynamics and pressure drops in complex porous media. The model translates intricate real-world porous structures, like the metallic foams, into a simplified geometric framework. 
@@ -1551,9 +1551,9 @@ The goal of the validated numerical model is to evaluate the relation between to
 A high resolution 3D printing was used to create the physical samples of the porous microstructure, which were then tested in the TEALC experimental loop to validate the numerical model.
 
 \subsection{Parameter 1 - Porosity}
-Porosity was previously defined as the ratio of the volume of voids to the total volume of the porous material, expressed by Equation 9.
+Porosity was previously defined as the ratio of the volume of voids to the total volume of the porous material, expressed by Equation~\eqref{eq:void-fraction}.
 A set of geometries with different porosity values was created to evaluate the effect of porosity on the pressure drop in the porous zone.
-Figure \ref{fig:grid_cfd_2} shows the 8x8x8 mm sample of the porous microstructure with a variable porosity ranging from 4.3 up to 95.4~\%, which was used for the CFD analysis.
+Figure \ref{fig:grid_cfd_2} shows the $8\times8\times8$~mm sample of the porous microstructure with a variable porosity ranging from 4.3 up to 95.4~\%, which was used for the CFD analysis.
 \begin{figure}[h]
   \includegraphics[width=12cm]{grid_cfd_2.jpg}
   \centering
@@ -1562,8 +1562,8 @@ Figure \ref{fig:grid_cfd_2} shows the 8x8x8 mm sample of the porous microstructu
 \end{figure}
 
 \subsection{Parameter 2 - Tortuosity}
-Figure \ref{fig:grid_cfd_3} shows the 8x8x8 mm sample of the porous microstructure with a variable tortuosity ranging from 1.0 up to 2.0, which was used for the CFD analysis.
-The tortuosity parameter was defined as the ratio of the actual flow path length to the straight-line distance between the inlet and outlet of the porous zone, expressed by Equation 11, also illustrated in Figure 46.
+Figure \ref{fig:grid_cfd_3} shows the $8\times8\times8$~mm sample of the porous microstructure with a variable tortuosity ranging from 1.0 up to 2.0, which was used for the CFD analysis.
+The tortuosity parameter was defined as the ratio of the actual flow path length to the straight-line distance between the inlet and outlet of the porous zone, expressed by Equation~\eqref{eq:path-tortuosity} and illustrated in Figure~\ref{fig:tort}.
 \begin{figure}[h]
   \includegraphics[width=10cm]{grid_cfd_3.jpg}
   \centering
@@ -1573,8 +1573,8 @@ The tortuosity parameter was defined as the ratio of the actual flow path length
 
 
 \pagebreak
-\subsection{An overview of used geometries}
-Table 4 provides an overview of the sample geometries used in the CFD analysis, which were designed with varying porosity and tortuosity values.
+\subsection{Investigated geometries}
+Table~\ref{tab:porosity_tortuosity_samples} provides an overview of the sample geometries used in the CFD analysis, which were designed with varying porosity and tortuosity values.
 Total number of samples is 35, with 5 different tortuosity values and 7 different porosity values.
 Samples marked with an asterisk (*) were selected for the experimental validation of the numerical model in the TEALC experimental loop.
 \begin{table}[h!]
@@ -1592,12 +1592,12 @@ Tortuosity & \multicolumn{7}{c}{Porosity $\Phi$} \\
 2.00 &Ae &Be &Ce &De &Ee &Fe &Ge \\
 \hline
 \end{tabular}
-\label{tab:porosity_tortuosity_samples}
 \caption{Overview of sample geometries with different porosity and tortuosity values.}
+\label{tab:porosity_tortuosity_samples}
 \end{table}
 
 \subsection{CFD analysis setup}
-Figure \ref{fig:grid_cfd_setup} shows the CFD analysis setup. The 40 mm porous sample is inserted into a 16x24 mm channel, with a 100 mm inlet and outlet length to ensure fully developed flow conditions.
+Figure \ref{fig:grid_cfd_setup} shows the CFD analysis setup. The 40 mm porous sample is inserted into a $16\times24$~mm channel, with a 100 mm inlet and outlet length to ensure fully developed flow conditions.
 The inlet boundary condition is set as a velocity inlet, while the outlet is defined as a pressure outlet. The walls of the channel are treated as no-slip boundaries.
 The fluid used in the simulation is water at room temperature, with properties defined according to standard conditions.
 
@@ -1636,7 +1636,7 @@ The geometry variant \textbf{De} was selected for the mesh sensitivity analysis,
 Because different geometry cases have different fluid volume, the total number of cells cannot be compared across the different geometry cases, it serves only as a measure to evaluate the mesh refinement for a specific geometry case.
 The wall inflation settings were set to uniform, 6 layers with a growth rate of 1.2, and the first layer thickness was set to 0.01 mm.
 The inflation settings prevented issues with variable first layer thickness in the region of the entrance to the porous zone, which could lead to numerical instabilities and convergence issues.
-Figures \ref{fig:grid_mesh_prehled} show a detailed look at some of the generated mesh for the C
+Figure~\ref{fig:grid_mesh_prehled} compares three mesh resolutions near the porous structure.
 
 \begin{figure}[h]
     \centering
@@ -1784,9 +1784,7 @@ The pressure profile shown in Figure~\ref{fig:grid_mesh_vybrana_a99} demonstrate
 \newpage
 \subsection{Validation of the numerical model}
 The numerical model was validated by comparing the CFD simulation results with experimental data obtained from the TEALC experimental loop.
-The selected geometry cases for validation were Ba and Da, which represent two different porous structures.
-Figures \ref{fig:grid_mesh_vybrana_a1002} shows the 3D-printed samples used for the experimental validation, which were manufactured using a high-resolution 3d printer to accurately replicate the porous microstructure.
-Samples dimensions are 40x40x15 mm.
+Figure~\ref{fig:grid_mesh_vybrana_a1002} shows the two reference samples, Ba and Da. Both were manufactured by high-resolution 3D printing and measured $40\times40\times15$~mm.
 
 \begin{figure}[h]
   \includegraphics[width=7.5cm]{foto_vzorku_k_validaci.jpeg}
@@ -1795,7 +1793,7 @@ Samples dimensions are 40x40x15 mm.
   \label{fig:grid_mesh_vybrana_a1002}
 \end{figure}
 
-Figure \ref{fig:grid_mesh_vybrana_a1001} shows the comparison of the pressure drop across the porous zone for both geometry cases, where the CFD results are in good agreement with the experimental data, indicating that the numerical model is capable of accurately predicting the pressure drop in porous materials.
+Figure~\ref{fig:grid_mesh_vybrana_a1001} compares the measured and calculated pressure drops across each sample.
 
 \begin{figure}[h]
   \includegraphics[width=12cm]{graf_validace_grid.png}
@@ -2579,7 +2577,7 @@ Images of all samples taken by optical microscopy are shown below in Figures \re
 \centering
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-\textbf{Sample name} & \textbf{Material} & \textbf{Porosity} & \textbf{Avg. $d_{\mathrm{e}}$} & \textbf{Material $\lambda$} [$\mathrm{W\,m^{-1}\,K^{-1}}$] \\ \hline
+\textbf{Sample name} & \textbf{Material} & \textbf{Porosity} [\%] & \textbf{Mean $d_{\mathrm{e}}$} [mm] & \textbf{Material $\lambda$} [$\mathrm{W\,m^{-1}\,K^{-1}}$] \\ \hline
 A1 & $Cu$ & 96.0 & 0.36 & 395 \\ \hline
 A2 & $Cu$ & 97.0 & 0.89 & 395 \\ \hline
 A3 & $Cu$ & 96.8 & 1.26 & 395 \\ \hline
@@ -2595,11 +2593,11 @@ D3 & $ZrO_2$ & 89.0 & 2.71 & 3 \\ \hline
 E1 & Polyurethane & 96.0 & 1.62 & 0.3 \\ \hline
 E2 & Polyurethane & 95.8 & 2.59 & 0.3 \\ \hline
 \end{tabular}
-\caption{Table of porous material samples.}
+\caption{Material properties and mean equivalent pore diameters of the tested samples.}
 \label{tab:vzorky23}
 \end{table}
 
-All of the selected samples were manufactured in dimensions 40x40x15 mm, the water flow in experimental setup was passing through the 40x15 mm face, allowing the flow to develop in the 40 mm length of the sample.
+Each sample measured $40\times40\times15$~mm. Water entered through a $40\times15$~mm face and travelled 40~mm through the sample.
 \\
 \\
 Representative optical micrographs of all porous material samples investigated in this study are presented in Figures~\ref{fig:sadavzorku1}--\ref{fig:sadavzorku3}. All images were acquired under identical microscope magnification and illumination conditions, allowing direct qualitative comparison of the internal porous structures. The micrographs provide an overview of the characteristic pore morphology, ligament arrangement and structural homogeneity of the investigated materials prior to the quantitative image analysis described in the following sections. Although several samples exhibit comparable overall porosity, substantial differences in pore size, pore shape, ligament thickness and structural uniformity are clearly visible. These observations indicate that porosity alone is insufficient to fully characterize the geometry of porous materials, highlighting the importance of additional microstructural parameters for understanding their hydraulic behaviour.
@@ -2962,7 +2960,7 @@ The obtained results demonstrate clear differences in hydraulic resistance among
 
 \subsection{Discussion of results}
 
-The hydraulic behaviour of porous materials is commonly described by the coefficients $A$ and $B$ of the Darcy--Forchheimer equation, representing the viscous and inertial contributions to the overall pressure loss. In an attempt to identify relationships between the hydraulic response and the measured microstructural properties, the fitted coefficients were compared with two basic geometric descriptors obtained from optical microscopy: porosity and the average equivalent pore diameter $d_e$. Since the investigated materials exhibit substantially different pore morphologies, the samples were divided into two groups. The first group consisted of metallic foams (Cu and Sn), while the second included ceramic and polymer foams (Al$_2$O$_3$, ZrO$_2$ and polyurethane), which share a similar cellular morphology but differ from metallic foams in their manufacturing process and internal structure.
+The hydraulic behaviour of porous materials is commonly described by the coefficients $A$ and $B$ of the Darcy--Forchheimer equation, representing the viscous and inertial contributions to the overall pressure loss. In an attempt to identify relationships between the hydraulic response and the measured microstructural properties, the fitted coefficients were compared with porosity measured by helium pycnometry and mean equivalent pore diameter $d_e$ obtained from optical micrographs. Since the investigated materials exhibit substantially different pore morphologies, the samples were divided into two groups. The first group consisted of metallic foams (Cu and Sn), while the second included ceramic and polymer foams (Al$_2$O$_3$, ZrO$_2$ and polyurethane), which share a similar cellular morphology but differ from metallic foams in their manufacturing process and internal structure.
 \begin{figure}[h]
   \includegraphics[width=14cm]{korelace_porozita.png}
   \centering
@@ -2981,24 +2979,18 @@ Figure~\ref{fig:B_porosity} compares the inertial coefficient $B$ with the measu
 
 Figure~\ref{fig:B_de} presents the dependence of the inertial coefficient $B$ on the average equivalent pore diameter. In comparison with porosity, a more pronounced relationship is observed for the metallic foams. Samples with larger pore diameters generally exhibit lower values of coefficient $B$, corresponding to reduced inertial pressure losses. This behaviour agrees with the physical expectation that increasing the characteristic flow passage reduces local acceleration of the fluid and therefore decreases form drag within the porous structure. For the ceramic and polymer foams the correlation is less evident, suggesting that additional geometric characteristics influence the hydraulic response.
 
-Overall, the obtained results demonstrate that neither porosity nor the equivalent pore diameter alone is sufficient to predict the hydraulic characteristics of porous materials across different material classes. Nevertheless, the pore diameter provides a more meaningful descriptor than porosity, particularly for metallic foams. The observed scatter further suggests that the pressure-loss coefficients are governed by a combination of several microstructural parameters rather than by a single quantity. Parameters such as pore connectivity, tortuosity or the characteristic size of pore throats are expected to contribute significantly to the hydraulic behaviour and should therefore be considered in future predictive models.
+\subsection{Conclusions from the hydraulic measurements}
+Samples A1 and A3 had similar porosities but different pressure losses. Within the metallic group the inertial coefficient $B$ tended to decrease with increasing equivalent pore diameter. The same trend was not apparent in the ceramic and polymer samples (Figure~\ref{fig:B_de}). Neither porosity nor a single pore-size descriptor was sufficient to predict the pressure loss across material classes.
 
-The presented analysis confirms that optical characterization of the porous microstructure provides valuable information about the hydraulic performance of the investigated materials. Although simple one-parameter correlations remain limited, the observed trends support the hypothesis that microstructural descriptors obtained from microscopy can serve as a basis for predicting the hydraulic behaviour of porous materials before experimental testing.
-
-\newpage
-
-\subsection{Conclusions from experimental study}
+The fitted coefficients describe the measured pressure losses within the tested velocity range. Where the fit assigned a negligible value to $A$, the measurements did not resolve the viscous contribution well enough to estimate permeability from $K=\mu L/A$.
 
 \newpage
-
 \section{Numerical study of microCT scanned structures}
 
 This chapter describes the numerical model of flow through porous material scanned by microCT.
 The goal of this study is to uncover thermohydraulic behavior of water flowing through porous copper structure.
-The numerical model is validated against the experimental data obtained from TEALC experimental loop.
-Since the porous copper foams are manufactured by a sintering process, the geometry of the porous structure is highly complex and irregular, but the overall morphology of the foam is comparable and largely independent of the manufacturer.
-The differences between individual foams are mainly related to scaling, i.e. the characteristic pore size.
-MicroCT scans of the same type of porous copper as used in our measurements were kindly provided by Paola Ranut and Enrico Nobile from the University of Trieste, Italy \cite{Ranut2015}.
+Hydraulic and thermal comparisons with measurements are presented separately below.
+The reconstructed geometry represents a separate specimen of the same type of copper foam as the material used in the measurements. Paola Ranut and Enrico Nobile (University of Trieste) provided the scans \cite{Ranut2015}. Differences between the reconstructed specimen and the tested sample are therefore one possible source of disagreement.
 
 \begin{figure}[H]
 \centering
@@ -3095,24 +3087,24 @@ node[
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\caption{CFD mesh sensitivity analysis, $v_{inlet} = 0.26 m.s^{-1}$}
+\caption{CFD mesh sensitivity analysis, $v_{inlet} = 0.26\,\mathrm{m\,s^{-1}}$}
 \label{fig:mesh_sens}
 \end{figure}
 
 Figure \ref{fig:yplus_distribuce} shows the Y+ distribution on the porous foam walls for the chosen mesh size.
-Considering the inlet value 0.26 m.s$^{-1}$ is on the lower end of the velocity range, the Y+ values are expected to be mostly below 1 for all the solved cases, indicating that the mesh is sufficiently fine to accurately capture the near-wall flow behavior using the k-omega SST turbulence model.
+The distribution applies to the plotted inlet velocity of $0.26~\mathrm{m\,s^{-1}}$. Since wall shear stress changes with velocity, this plot alone does not establish the $y^+$ range at the higher flow rates.
 
 \pagebreak
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.98\linewidth]{distribuce_Yplusu.png}
-\caption{Y+ distribution on porous foam walls, $v_{inlet} = 0.26 m.s^{-1}$}
+\caption{Y+ distribution on porous foam walls, $v_{inlet} = 0.26\,\mathrm{m\,s^{-1}}$}
 \label{fig:yplus_distribuce}
 \end{figure}
 
 Figure \ref{fig:line_a} shows the location of Line A, which is used for evaluating the simulation results.
-The resulting pressure profile along Line A is shown in Figure \ref{fig:line_a_dp}, demonstrating the pressure drop across the porous structure at an inlet velocity of 0.26 m.s$^{-1}$.
+The resulting pressure profile along Line A is shown in Figure \ref{fig:line_a_dp}, demonstrating the pressure drop across the porous structure at an inlet velocity of $0.26~\mathrm{m\,s^{-1}}$.
 
 \begin{figure}[H]
 \centering
@@ -3122,13 +3114,13 @@ The resulting pressure profile along Line A is shown in Figure \ref{fig:line_a_d
 \end{figure}
 
 Figure \ref{fig:line_a_dp} shows the flow inside the porous structure is fully developed, with a minimal disturbance at the beginning and the end of porous zone and a linear pressure drop observed across the porous section.
-Based on this observation, the pressure drop between inlet and outlet divided by the porous zone length can be used for evaluation of the $dp/dl$ $[Pa/m]$ characteristic.
+Based on this observation, the pressure drop between inlet and outlet divided by the porous zone length can be used for evaluation of the $\Delta p/L$ in Pa/m characteristic.
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\linewidth]{graf_DP_vzorku.png}
-\caption{Pressure profile along Line A, $v_{inlet}=0.26 m.s^{-1}$}
+\caption{Pressure profile along Line A, $v_{inlet}=0.26\,\mathrm{m\,s^{-1}}$}
 \label{fig:line_a_dp}
 \end{figure}
 
@@ -3136,8 +3128,8 @@ Based on this observation, the pressure drop between inlet and outlet divided by
 \subsection{Validation - pressure drop}
 
 In order to validate the numerical model, the pressure drop across the porous structure is compared with previously published experimental data \cite{Smolk2024}.
-Figure \ref{fig:line_a_dp_validation} shows the comparison of pressure drop per unit length ($dp/dl$) between the numerical and experimental results.
-The error rate between the numerical and experimental results is approximately 17~\%.
+Figure \ref{fig:line_a_dp_validation} shows the comparison of pressure drop per unit length ($\Delta p/L$) between the numerical and experimental results.
+The model underpredicts the pressure drop at every non-zero velocity for which both data sets are available. At 0.651~m/s the measured and predicted values are 1000 and 770~kPa/m, respectively. At 1.302~m/s they are 3166 and 2420~kPa/m.
 
 \begin{figure}[H]
 \begin{center} % aby byl celý graf na střed strany
@@ -3145,9 +3137,8 @@ The error rate between the numerical and experimental results is approximately 1
 \begin{axis}[
     width=12cm,     % kontrola šířky grafu
     height=8cm,     % kontrola výšky grafu
-    ylabel={dp/l $[kPa/m] $},
+    ylabel={$\Delta p/L$ [kPa/m]},
     xlabel={Flow velocity $[m/s]$},
-    xmax=1.2,
     grid=both,
     legend style={
         at={(0.02,0.98)}, % vlevo nahoře uvnitř grafu
@@ -3200,13 +3191,13 @@ table {
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\caption{Pressure profile along Line A, $v_{inlet}=0.26 m.s^{-1}$}
+\caption{Measured and predicted pressure drop per unit length as a function of flow velocity.}
 \label{fig:line_a_dp_validation}
 \end{figure}
 
 \subsection{Hydraulic characteristic}
 
-Figures \ref{fig:dp_xy}, \ref{fig:pathlines_velocity} and \ref{fig:profil_rychlosti} show the hydraulic characteristics of the flow through the porous structure at an inlet velocity of 0.26 m.s$^{-1}$.
+Figures \ref{fig:dp_xy}, \ref{fig:pathlines_velocity} and \ref{fig:profil_rychlosti} show the hydraulic characteristics of the flow through the porous structure at an inlet velocity of $0.26~\mathrm{m\,s^{-1}}$.
 This velocity is selected as it represents the operating flow rate used in the experimental validation of the heat transfer part of the study.
 Figure \ref{fig:dp_xy} shows the pressure profile in the YZ plane, illustrating the pressure drop across the porous structure.
 Figure \ref{fig:pathlines_velocity} shows the velocity pathlines within the porous structure, highlighting the complex flow patterns and turbulence induced by the porous geometry.
@@ -3214,14 +3205,14 @@ Figure \ref{fig:pathlines_velocity} shows the velocity pathlines within the poro
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\linewidth]{DPxy.jpg}
-\caption{Pressure profile in the YZ plane, $v_{inlet}=0.26 m.s^{-1}$}
+\caption{Pressure profile in the YZ plane, $v_{inlet}=0.26\,\mathrm{m\,s^{-1}}$}
 \label{fig:dp_xy}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\linewidth]{pathlines_velocity_2.jpg}
-\caption{Velocity pathlines in the porous structure, $v_{inlet}=0.26 m.s^{-1}$}
+\caption{Velocity pathlines in the porous structure, $v_{inlet}=0.26\,\mathrm{m\,s^{-1}}$}
 \label{fig:pathlines_velocity}
 \end{figure}
 
@@ -3232,7 +3223,7 @@ The maximal velocity inside the porous structure reaches up to 2x the inlet velo
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\linewidth]{profil_rychlosti_vzorku.png}
-\caption{Velocity profile along the Line A, $v_{inlet}=0.26 m.s^{-1}$}
+\caption{Velocity profile along the Line A, $v_{inlet}=0.26\,\mathrm{m\,s^{-1}}$}
 \label{fig:profil_rychlosti}
 \end{figure}
 
@@ -3294,7 +3285,7 @@ Since the heat transfer coefficient is not uniform across the foam interface and
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{mfl_7.png}
-\caption{Heat transfer coefficient profile on the foam interface, $v_{inlet}=0.26 m.s^{-1}$}
+\caption{Heat transfer coefficient profile on the foam interface, $v_{inlet}=0.26\,\mathrm{m\,s^{-1}}$}
 \label{fig:flumech_htc_dist}
 \end{figure}
 
@@ -3303,13 +3294,13 @@ Since the heat transfer coefficient is not uniform across the foam interface and
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{mfl_1.png}
-\caption{Heat transfer coefficient distribution on the WALL\_foam interface, $v_{inlet}=0.26 m.s^{-1}$}
+\caption{Heat transfer coefficient distribution on the WALL\_foam interface, $v_{inlet}=0.26\,\mathrm{m\,s^{-1}}$}
 \label{fig:flumech_alpha_dist}
 \end{figure}
 
-Area-weighted averaging keeps the total heat flux through the solid-fluid interface consistent, but prevents numerical instabilities in the thermal analysis that could arise from highly localized peaks in the heat transfer coefficient.
+The local heat-transfer coefficients were area-averaged separately over the foam and wall interfaces and applied as uniform boundary conditions in the solid model.
 Figure \ref{fig:flumech_alpha_dist} shows the distribution of the heat transfer coefficient across the foam interface for the scenario of validation experiment.
-In this case, the average value of the heat transfer coefficient is calculated to be 39716 W/m$^2$K, which is then applied as a uniform boundary condition in the thermal analysis of the porous structure in ANSYS Mechanical.
+In this case, the average value of the heat transfer coefficient is calculated to be $39\,716~\mathrm{W\,m^{-2}\,K^{-1}}$, which is then applied as a uniform boundary condition in the thermal analysis of the porous structure in ANSYS Mechanical.
 \\
 \\
 Heat transfer coefficient (HTC) is evaluated separately for the WALL\_mid and WALL\_foam boundary conditions (see Figure \ref{fig:vypoc_geom}), which represent the solid wall and the porous foam interface, respectively.
@@ -3466,7 +3457,7 @@ Heat flux value is set as an input parameter, while the convection boundary cond
 Figure \ref{fig:exp_samples_spojeni} shows microscopy photo of the contact region between the solid wall and the porous structure body.
 The connection between these two bodies is a soldered joint (Sn97Cu3 soldering paste), which is characterized by a specific contact conductance.
 This contact conductance is defined as the ratio of the thermal conductivity of the contact material ($\lambda_{\text{Sn97Cu3}}$) to the thickness of the contact layer ($t_{\text{soldered}}$), as shown in Equation \ref{eq:contact_conductance}.
-According to the Figure \ref{fig:exp_samples_spojeni}, the thickness is estimated to be approximately 0.5 mm, thermal conductivity of Sn97Cu3 soldering paste is expected to be at 50 W/mK, resulting in the contact conductance value of 100 000 W/m$^2$K.
+According to the Figure \ref{fig:exp_samples_spojeni}, the thickness is estimated to be approximately 0.5 mm, thermal conductivity of Sn97Cu3 soldering paste is expected to be at 50 W/mK, resulting in the contact conductance value of $100\,000~\mathrm{W\,m^{-2}\,K^{-1}}$.
 Contact connection between porous foam body and solid wall is shown in Figure \ref{fig:thermal_contact}.
 The contact regions on WALL\_mid surface are excluded from the convection boundary condition to prevent double counting of the heat transfer in these areas.
 
@@ -3488,8 +3479,8 @@ TCC_{\text{contact}} = \frac{\lambda_{\text{Sn97Cu3}}}{t_{\text{soldered}}} = \f
 Figure \ref{fig:validate_thermal_model_x} shows the comparison of thermocouple measurements from the experimental setup with the numerical results obtained from the numerical model.
 Resulting temperature was evaluated as the average temperature on the surface where the heat load is applied (bottom surface in Figure \ref{fig:thermal_model_domain}(b)).
 The thickness of the solid wall is 2 mm, which corresponds to the position of the thermocouples in the experimental setup.
-The error rate between the numerical and experimental results is approximately 6~\%, which indicates a good agreement between the two.
-Thermal model is therefore validated and can be used for further analysis of temperature profiles in the porous foam structure.
+At the lowest applied heat flux the area-averaged prediction is 76.8~$^\circ$C and thermocouple A reads 91~$^\circ$C. At the highest load the corresponding temperatures are 172 and 160~$^\circ$C.
+The model reproduces the rise in temperature with heat flux. The difference includes the comparison of a surface average with a local measurement.
 
 \begin{figure}[H]
 \begin{center} % aby byl celý graf na střed strany
@@ -3500,7 +3491,7 @@ Thermal model is therefore validated and can be used for further analysis of tem
     width=12cm,     % kontrola šířky grafu
     height=8cm,     % kontrola výšky grafu
     ylabel={Temperature $[^\circ C]$},
-    xlabel={Flow velocity [$\mathrm{MW\,^{-2}}$]},
+    xlabel={Applied heat flux [$\mathrm{MW\,m^{-2}}$]},
     grid=both,
     legend style={
         at={(0.02,0.98)}, % vlevo nahoře uvnitř grafu
@@ -3555,7 +3546,7 @@ table {
     1 135
     1.5 172
 };
-\addlegendentry{Numerical result at the corresponding position}
+\addlegendentry{Model, heated-surface average}
 
 \end{axis}
 \end{tikzpicture}
@@ -3611,7 +3602,7 @@ The average temperature of each surface is calculated and plotted against the X 
 \end{figure}
 
 Figures \ref{fig:profily_mech_1xx} and \ref{fig:profily_mech_2xx} show the temperature profiles within the porous foam structure under different operating conditions.
-Figure \ref{fig:profily_mech_1xx} shows the temperature profiles at different inlet velocities for a constant heat flux load of 1~MW/m$^2$, Figure \ref{fig:profily_mech_2x} shows the temperature profiles at different heat flux loads for a constant inlet velocity of 0.1 m.s$^{-1}$.
+Figure \ref{fig:profily_mech_1xx} shows the temperature profiles at different inlet velocities for a constant heat flux load of 1~MW/m$^2$, Figure \ref{fig:profily_mech_2xx} shows the temperature profiles at different heat flux loads for a constant inlet velocity of 0.1 m.s$^{-1}$.
 The temperature reaches the surrounding fluid temperature in just under 1 mm from the heated surface for all considered scenarios.
 
 \begin{figure}[H]
@@ -3779,11 +3770,7 @@ fill between[of=bottomB and curve];
 
 \subsection{Effective height of the porous foam heat sink}
 
-To evaluate the performance of the porous foam heat sink, the concept of effective height is introduced.
-The effective height $\boldsymbol{h_{\text{eff90}}}$ is defined as the height in the foam structure where 90~\% of the total heat transfer occurs.
-Figure \ref{fig:profily_mech_1x} shows an example of determining the effective height from the temperature profile at an inlet velocity of 0.05~m/s and load of 1~MW/m$^2$.
-The effective height is determined by finding the position along the x-axis where the temperature reaches 90~\% of the maximum temperature difference in the foam structure.
-This effective height provides a useful metric for comparing the performance of different boundary conditions.
+The effective height $h_{\mathrm{eff90}}$ is measured from the heated wall along the $x$-axis. At this height the section-averaged solid temperature has fallen through 90\,\% of the difference between its wall-side value $T(0)$ and the reference fluid temperature $T_f$. Thus $T(h_{\mathrm{eff90}})-T_f=0.1[T(0)-T_f]$. Figure~\ref{fig:profily_mech_1x} illustrates the construction for 0.05~m/s and 1~MW/m$^2$. This temperature criterion does not measure cumulative heat removal.
 
 \begin{figure}[H]
 \centering
@@ -3839,9 +3826,9 @@ node[
 \end{figure}
 
 Figure \ref{fig:profily_mech_2x} shows the effective height of the foam heat sink as a function of inlet velocity for different heat flux loads.
-The effective height decreases with increasing inlet velocity, indicating that only a very thin layer of the foam structure is actively involved in heat transfer at higher flow rates.
-This trend highlights the importance of optimizing the foam structure and flow conditions to maximize the effective height and overall heat transfer performance of the porous foam heat sink.
-It can be concluded that the porous foam volume higher than the effective height is not contributing to the heat transfer process, therefore the design of the cooling channel can be optimized by reducing the foam height to the effective height.
+As inlet velocity increases, the temperature difference between foam and coolant decays over a shorter distance. This observation identifies the region with the largest temperature change. It does not establish an optimum foam thickness.
+
+\doplnit{Ověřit shodu provozního bodu v obr.~\ref{fig:profily_mech_1x} a~\ref{fig:profily_mech_2x}. Při 0,05~m/s a 1~MW/m$^2$ je v ilustraci označeno 0,38~mm, zatímco souhrnná data uvádějí 0,158~mm.}
 
 \begin{figure}[ht]
 \centering
@@ -3857,11 +3844,11 @@ It can be concluded that the porous foam volume higher than the effective height
 ]
 
 \addplot table[x=x, y=05heff90, col sep=semicolon, color=red] {heff_vysledky.csv};
-\addlegendentry{\phantom{0.}2\phantom{25} $\,\mathrm{MW\,m^{-2}}$}
+\addlegendentry{0.5 $\mathrm{MW\,m^{-2}}$}
 \addplot table[x=x, y=1heff90, col sep=semicolon, color=black] {heff_vysledky.csv};
 \addlegendentry{\phantom{0.}1\phantom{25} $\,\mathrm{MW\,m^{-2}}$}
 \addplot table[x=x, y=2heff90, col sep=semicolon, color=blue] {heff_vysledky.csv};
-\addlegendentry{\phantom{0.}0.5\phantom{25} $\,\mathrm{MW\,m^{-2}}$}
+\addlegendentry{2 $\mathrm{MW\,m^{-2}}$}
 
 \end{axis}
 \end{tikzpicture}
@@ -3919,6 +3906,8 @@ Heating method & Electromagnetic induction \\
 \label{tab:hefel_parameters}
 \end{table}
 
+\doplnit{U tlaku 70~kPa upřesnit podle záznamu HEFEL, zda jde o absolutní tlak, nebo o přetlak.}
+
 \begin{figure}[H]
   \centering
   \resizebox{0.94\textwidth}{!}{\input{hefel_schematic.tex}}
@@ -3938,7 +3927,7 @@ The HEFEL loop is illustrated in Figure~\ref{fig:hefel_schematic}. The sample is
 Figure \ref{fig:chf_sample} shows the schematic comparison of two manufactured samples.
 The cooling channel sample is made of CuCrZr, steel plates are attached to increase the efficiency of induction heating, and porous copper is soldered directly to the CuCrZr body.
 Thermocouples are inserted into the CuCrZr sample body to measure the solid temperature in various positions.
- Figure \ref{fig:chf_vykres} shows the manufactured test specimens and their instrumentation. The samples were installed in the HEFEL test section under identical hydraulic boundary conditions.
+ Figure \ref{fig:chf_vykres} shows the manufactured test specimens and their instrumentation. Both samples were tested in the same HEFEL test section.
 
 \begin{figure}[ht!]
   \centering
@@ -3951,7 +3940,7 @@ Thermocouples are inserted into the CuCrZr sample body to measure the solid temp
 A porosity of 95.2~\%, measured by helium pycnometry, was corroborated by density measurements (0.443 g/cm$^3$), the standard deviation of porosity measurement is 0.2~\%.
 Wavelength-dispersive spectroscopy (WDS) confirmed that the porous material is pure copper, no additional elements were found (Figure \ref{fig:pory}(right)).
 The results of the pore diameter analysis are shown in Figure \ref{fig:pory} (left), the mean pore diameter is 0.56 mm.
-The diameter of the strut is 60 $\mu$ m. The properties measured of the porous material and the calculated values of permeability and Forchheimer coefficient are listed in Table 1.
+The diameter of the strut is $60~\mu\mathrm{m}$. The properties measured of the porous material and the calculated values of permeability and Forchheimer coefficient are listed in Table~\ref{tab:chf-matrix}.
 
 \begin{figure}[ht!]
     \centering
@@ -3967,12 +3956,12 @@ The diameter of the strut is 60 $\mu$ m. The properties measured of the porous m
       \hline
       Pore diameter& Strut diameter & Porosity & Forchheimer coefficient & Permeability\\
       \hline
-      $d_p$ [mm] & $d_f$ [mm] & $\epsilon$ [\%] & $\beta$ [m$^{-1}$] & $K$ [m$^2$]\\
+      $d_p$ [mm] & $d_f$ [mm] & $\epsilon$ [\%] & $c$ [--] & $K$ [m$^2$]\\
       \hline
-      0.56& 0.6 & 95.2 & 0.1206624 & $4.725199 \times 10^{-9}$ \\
+      0.56 & 0.060 & 95.2 & 0.1206624 & $4.725199 \times 10^{-9}$ \\
       \hline
   \end{tabular}
-  \caption{Measured porous material properties.}
+  \caption{Measured pore and strut diameters and porosity, with the hydraulic parameters used for the porous zone.}\label{tab:chf-matrix}
   \end{table}
 \end{center}
 
@@ -3981,7 +3970,7 @@ Figure \ref{fig:provoz} shows the porous copper structure after experimental mea
 No significant damage to the structure itself is observed, but the formation of corrosives and impurities is clearly visible.
  Figure \ref{fig:provoz} (right) shows the detailed image of the soldered joint.
 Although the porous structure is observed to be covered in the soldering material, the joint quality between the CuCrZr solid channel and the porous material is very poor.
-Many cracks in the soldered joint indicate that the thermal conductivity between the solid channel and the porous structure is very low.
+Cracks are visible in the solder and may increase the thermal resistance between the porous insert and the channel wall.
 
 \begin{figure}[ht!]
   \centering
@@ -3994,7 +3983,7 @@ Figure \ref{fig:chf_graf1} shows the experimental and numerical results of the p
 The numerical results match the experimental measurements for both samples.
 The porous sample has a significantly higher pressure drop compared to the plain channel.
 Figure \ref{fig:porous1} shows the static pressure contour of the porous channel sample.
-Both pressure contours are for the case of 0.5~kg/s (30~L/min) of water mass flow.
+The contour is shown for a water mass flow rate of 0.5~kg/s (approximately 30~L/min).
 
 \begin{figure}[ht!]
   \centering
@@ -4008,7 +3997,7 @@ Both pressure contours are for the case of 0.5~kg/s (30~L/min) of water mass flo
 \begin{figure}[ht!]
   \centering
   \includegraphics[width=14cm]{chf_6.png} 
-  \caption{Plain channel - pressure contour, 0.5~kg/s water flow.}
+  \caption{Static pressure in the porous channel at 0.5~kg/s water flow.}
   \label{fig:porous1}
 \end{figure}
 
@@ -4034,10 +4023,8 @@ The absolute CHF of the porous sample was not reached. The experiment therefore 
 The operating flow for heat transfer analysis measurements is set to a very low value of 6~L/min to achieve the critical heat flux on the plain sample and examine the difference between both samples in the perspective of the critical heat flux.
 The CHF is the main focus of this research. 
 The main purpose of the porous structure is to avoid the formation of a stable insulating vapor layer on the heated surface (the boiling crisis).
-The microstructure of the porous material allows the capillary effect to deliver liquid water near the heated surface.
-From this point of view, the conductivity of porous material is not only unnecessary but may also be unwanted.
-\\
-\\
+Capillary transport could help replenish liquid near the heated surface. The measurements did not isolate this mechanism or determine how solid conductivity affects the onset of boiling crisis.
+
 Recent research on the Leidenfrost effect suggested a similar mechanism to prevent the formation of insulating vapor layer and also demonstrated the importance of low thermal conductivity of the porous material used \cite{Jiang2022}.
 The present measurements therefore support the hypothesis that the porous insert delays dryout under the investigated conditions; however, the relative roles of capillary transport, pore size and solid thermal conductivity cannot be separated from this dataset alone.
 
@@ -4050,14 +4037,14 @@ Numerical simulation of experimental test section with cooling channel samples w
 The pressure drop characteristics of the tested samples in the CFD analysis match the experimental data.
 \\
 \\
-Experimental measurements of heat transfer of both samples resulted in various results.
+
 The plain sample reached critical heat flux at approximately 4~MW/m$^2$, whereas critical heat flux was not reached for the porous sample within the available heating-power range.
 Within the investigated boundary conditions, the porous insert therefore increased the demonstrated CHF margin relative to the plain channel, although the absolute CHF of the porous configuration remains above the maximum heat flux reached in the experiment.
 
 \pagebreak
 \part{Results}
 
-This chapter collects the principal outputs of the four research work packages. The purpose is to state the concrete findings and their immediate interpretation without repeating the full methods and intermediate discussion given in the preceding chapters.
+
 
 \section{Controlled porous geometries: parametric numerical study}
 \subsection*{Principal results}
@@ -4083,21 +4070,21 @@ The controlled geometry study establishes the clearest causal relationship obtai
 \subsection*{Principal results}
 \begin{itemize}
     \item Commercial porous samples were characterized by microscopy and pressure-drop measurements and described using Darcy--Forchheimer parameters.
-    \item Materials with similar nominal porosity or PPI exhibited different pressure-loss characteristics.
+    \item Materials of similar measured porosity exhibited different pressure-loss characteristics.
     \item Porosity and PPI were therefore insufficient as stand-alone descriptors for predicting the hydraulic response of the investigated real porous materials.
-    \item Measured permeability and Forchheimer coefficients provided a more useful engineering description of the tested samples than a single manufacturer-specified morphology parameter.
+    \item Fitted pressure-loss coefficients described the tested samples across the measured velocity range. For six samples the viscous term was too small to identify permeability reliably.
 \end{itemize}
 
 \subsection*{Interpretation}
 This experimental result provides an important qualification to the parametric numerical study. The controlled study shows that hydraulic behaviour can be related quantitatively to well-defined geometrical parameters, whereas the real materials demonstrate that common nominal descriptors do not contain enough information to reconstruct those governing geometrical features. In practical design, the missing information is associated with features such as pore connectivity, local constrictions, strut morphology and effective tortuosity. Consequently, real porous materials require either richer geometrical characterization or direct hydraulic calibration before their pressure losses can be predicted reliably.
 
-\section{MicroCT-based CFD of the real porous structure}
+\section{microCT-based CFD of the real porous structure}
 \subsection*{Principal results}
 \begin{itemize}
     \item The real porous geometry reconstructed from micro-computed tomography was used directly for detailed CFD and conjugate heat-transfer analysis.
-    \item The reconstructed model reproduced the measured hydraulic behaviour with a difference of approximately 17\,\% and the thermal response with a difference of approximately 6\,\% under the investigated validation conditions.
+    \item The pressure-drop curve rises with velocity but lies below the measurements. The thermal model captures the rise in thermocouple temperature with applied heat flux; at the four plotted loads the surface-average prediction differs from the local measurement by about 2--14~K.
     \item The material comparison showed a strong effect of solid thermal conductivity on heat spreading inside the porous structure. Copper distributed heat most effectively, while lower-conductivity materials confined the thermal field closer to the heated region.
-    \item The effective heat-sink height $h_{\mathrm{eff90}}$ showed that only a limited region of the porous matrix adjacent to the heated wall contributes substantially to heat removal, particularly at higher inlet velocities.
+    \item The temperature profiles place the largest solid-to-fluid temperature differences close to the heated wall. The characteristic decay length decreases as inlet velocity increases.
 \end{itemize}
 
 \subsection*{Interpretation}
@@ -4106,7 +4093,7 @@ The microCT study bridges the gap between the idealized and real material descri
 \section{High-heat-flux proof-of-concept experiment}
 \subsection*{Principal results}
 \begin{itemize}
-    \item A plain CuCrZr cooling channel and a channel containing a porous copper insert were compared experimentally under identical hydraulic boundary conditions.
+    \item A plain CuCrZr cooling channel and a channel containing a porous copper insert were compared at an inlet water temperature of 60~$^\circ$C and a flow rate of 6~L/min.
     \item The plain channel reached boiling crisis at approximately 4~MW/m$^2$.
     \item The porous configuration remained thermally stable up to 4.7~MW/m$^2$, where the available induction-heating power became the limiting factor. The absolute CHF of the porous configuration was therefore not determined.
     \item The porous insert introduced a hydraulic penalty, while post-test inspection also identified the quality of the soldered thermal contact as an important manufacturing limitation.
@@ -4129,7 +4116,7 @@ The main engineering trade-off identified by the work is the competition between
 The parametric correlations provide a quantitative description of this trade-off for the controlled geometries. The real-material experiments then show why this trade-off cannot be evaluated from porosity or PPI alone. For a practical component, permeability and inertial resistance must either be measured or obtained from a numerical model that resolves enough of the real geometry to reproduce the hydraulic behaviour.
 
 \section{Role of solid thermal conductivity and active porous volume}
-The microCT calculations show that the solid matrix participates directly in heat spreading and that this contribution depends strongly on material thermal conductivity. At the same time, the effective heat-sink-height analysis indicates that only a fraction of the total porous volume may carry most of the transferred heat. These two findings must be considered together: a high-conductivity matrix can distribute heat efficiently, but simply increasing the foam thickness does not guarantee additional benefit once the thermally active region is already contained within a much thinner layer.
+The microCT calculations show that the solid matrix participates directly in heat spreading and that this contribution depends strongly on material thermal conductivity. At the same time, the effective heat-sink-height analysis indicates that the solid temperature approaches the fluid temperature within a fraction of the installed foam height. These two findings must be considered together: a high-conductivity matrix can distribute heat efficiently, but simply increasing the foam thickness does not guarantee additional benefit once the thermally active region is already contained within a much thinner layer.
 
 This result provides a direct design implication from the available data. Porous-layer thickness should be treated as an optimization variable and should not be chosen solely from manufacturing convenience or the assumption that more porous material automatically provides more cooling capacity.
 
@@ -4185,7 +4172,7 @@ These limitations do not reduce the value of the results; they define the approp
 \begin{itemize}
     \item Porous materials should not be selected from porosity or PPI alone; permeability and Forchheimer resistance should be measured or validated numerically.
     \item Hydraulic resistance and heat-transfer enhancement must be optimized simultaneously.
-    \item Porous layers substantially thicker than the thermally active region identified by $h_{\mathrm{eff90}}$ should be avoided unless another design requirement justifies the added material.
+    \item When selecting layer thickness, use the temperature decay length $h_{\mathrm{eff90}}$ as a guide alongside pressure loss, contact resistance and manufacturing requirements.
     \item Thermal contact between the porous insert and the cooled wall must be treated as a primary design parameter.
     \item Final component assessment should combine hydraulic characterization, validated CFD and high-heat-flux testing rather than relying on one morphology descriptor or one porous-medium correlation.
 \end{itemize}
@@ -4200,7 +4187,7 @@ The numerical and experimental results show that hydraulic resistance is quantif
 \subsection{H2: Microstructural characteristics can be used to predict hydraulic behaviour prior to flow testing}
 \textbf{Evaluation: Not confirmed in its original general form.}
 
-For the controlled substitute geometries, porosity and tortuosity were quantitatively related to hydraulic parameters. For the real porous materials, however, the descriptors available from conventional characterization, particularly porosity and PPI, did not uniquely determine the measured hydraulic response. The hypothesis is therefore valid only when the microstructural description contains the geometrical information that actually controls flow resistance, or when the material is calibrated directly by hydraulic testing. This negative qualification is itself an important result of the dissertation because it identifies the limit of simplified morphology-based prediction.
+For the controlled substitute geometries, porosity and tortuosity were quantitatively related to hydraulic parameters. For the real porous materials, however, the descriptors available from conventional characterization, particularly porosity and PPI, did not uniquely determine the measured hydraulic response. For example, the pore-diameter trend observed for the metallic samples did not extend to the ceramic and polymer groups. A prediction before flow testing was therefore not established for the commercial samples.
 
 \subsection{H3: Porous structures increase the critical heat-flux margin}
 \textbf{Evaluation: Supported by the comparative proof of concept, but not quantified as an absolute CHF enhancement factor.}
@@ -4208,7 +4195,7 @@ For the controlled substitute geometries, porosity and tortuosity were quantitat
 The plain channel reached CHF at approximately 4~MW/m$^2$, whereas the porous sample remained stable at 4.7~MW/m$^2$. The experiment therefore supports the hypothesis that the porous configuration can extend the operating margin before boiling crisis under the investigated conditions. Because the heating-power limit was reached before CHF occurred in the porous sample, the absolute porous-channel CHF and the exact enhancement factor were not determined.
 
 \section{Original scientific contribution}
-For the publications in which the dissertation author is the first author, the author performed the experimental and numerical research reported in those publications; complete coauthor lists are retained in the bibliography. The original scientific contributions presented here concern the work evaluated in this dissertation.
+I carried out all the research reported in the publications on which I am first author.
 
 The original scientific contribution of the dissertation can be summarized in five connected points:
 \begin{enumerate}
@@ -4237,10 +4224,10 @@ The broader contribution is the connection of these five results into one design
 The results indicate that porous cooling structures should be designed as coupled hydraulic--thermal systems. The objective is not to maximize one parameter such as porosity, surface area or foam thickness, but to select a structure that provides an acceptable balance between permeability, inertial resistance, active heat-transfer volume, solid heat spreading and manufacturing quality. The combined use of hydraulic measurements, validated CFD and high-heat-flux testing provides a practical route for this optimization.
 
 \section{Scope of the conclusions}
-The conclusions are restricted to the investigated samples, geometries and operating conditions. The work does not provide a universal porous-medium pressure-loss correlation, does not determine the absolute CHF of the porous proof-of-concept sample and does not experimentally compare the porous concept with swirl-tube or hypervapotron channels in a common test rig. These are boundaries of the available dataset, not missing steps required to support the principal conclusions of this dissertation.
+The conclusions are restricted to the investigated samples, geometries and operating conditions. The work does not provide a universal porous-medium pressure-loss correlation, does not determine the absolute CHF of the porous proof-of-concept sample and does not experimentally compare the porous concept with swirl-tube or hypervapotron channels in a common test rig.
 
 \section{Overall outcome}
-Taken together, the work demonstrates why porous cooling cannot be reduced to the simple statement that a larger internal area produces better heat transfer. The hydraulic response depends on the real flow-path geometry, the thermal response depends on both fluid transport and solid heat spreading, and the useful porous volume can be substantially smaller than the total installed volume. Within these constraints, the proof-of-concept experiment shows that the concept can provide additional margin close to the boiling limit. The principal outcome of the dissertation is therefore a physically consistent route from porous microstructure to hydraulic characterization, local heat-transfer analysis and high-heat-flux performance assessment.
+The experiments and models identify three quantities needed to assess a porous insert: pressure loss through the foam, the temperature drop across its joint with the wall and the heat flux sustained by the assembled channel. The last of these exceeded the plain-channel limit in the HEFEL comparison.
 
 \pagebreak
 
