@@ -130,14 +130,14 @@ s využitím pórovitých materiálů\par}
 \pagebreak
 \section*{Abstract}
 \addcontentsline{toc}{section}{Abstract}
-This dissertation investigates the hydraulic and thermal behaviour of porous-material cooling channels intended for high-heat-flux applications in nuclear fusion. The work combines parametric computational fluid dynamics (CFD), experimental characterization of real porous materials, geometry-resolved simulations based on micro-computed tomography and a high-heat-flux proof-of-concept experiment. For controlled substitute geometries, correlations are established between porosity, tortuosity, permeability and the Forchheimer coefficient. Measurements on commercial porous materials demonstrate that nominal porosity and pores per inch alone do not reliably predict their pressure losses. The microCT-based numerical model, validated against hydraulic and thermal measurements, is used to examine the influence of solid thermal conductivity and the thermally active height of the porous matrix. In the comparative high-heat-flux experiment, a plain channel reached critical heat flux at approximately 4~MW/m$^2$, whereas the porous channel remained stable up to the applied limit of 4.7~MW/m$^2$. The absolute critical heat flux of the porous channel was not determined. The dissertation thus identifies both the potential of porous cooling structures and the hydraulic, geometrical and manufacturing limitations that must be considered in their design.
+This dissertation investigates the hydraulic and thermal behaviour of porous-material cooling channels intended for high-heat-flux applications in nuclear fusion. The work combines parametric computational fluid dynamics (CFD), experimental characterization of real porous materials, geometry-resolved simulations based on micro-computed tomography and a high-heat-flux proof-of-concept experiment. For controlled substitute geometries, correlations are established between porosity, tortuosity, permeability and the Forchheimer coefficient. Measurements on commercial porous materials demonstrate that similar measured porosities can give different pressure losses and that a nominal pore count is insufficient for selecting an insert. The microCT-based numerical model, validated against hydraulic and thermal measurements, is used to examine the influence of solid thermal conductivity and the thermally active height of the porous matrix. In the comparative high-heat-flux experiment, a plain channel reached critical heat flux at approximately 4~MW/m$^2$, whereas the porous channel remained stable up to the applied limit of 4.7~MW/m$^2$. The absolute critical heat flux of the porous channel was not determined. The dissertation thus identifies both the potential of porous cooling structures and the hydraulic, geometrical and manufacturing limitations that must be considered in their design.
 
 \noindent\textbf{Keywords:} nuclear fusion; high heat flux; porous media; cooling channels; pressure drop; computational fluid dynamics; critical heat flux.
 
 \bigskip
 \section*{Abstrakt}
 \addcontentsline{toc}{section}{Abstrakt}
-Disertační práce se zabývá hydraulickými a tepelnými vlastnostmi chladicích kanálů s porézními materiály pro aplikace s vysokými tepelnými toky v jaderné fúzi. Výzkum propojuje parametrické CFD výpočty, experimentální charakterizaci skutečných porézních materiálů, simulace proudění v geometrii rekonstruované z dat výpočetní mikrotomografie a ověřovací experiment při vysokém tepelném zatížení. Pro idealizované porézní geometrie byly stanoveny vztahy mezi porozitou, tortuozitou, permeabilitou a Forchheimerovým koeficientem. Měření skutečných porézních materiálů ukázala, že samotná nominální porozita a počet pórů na palec nepostačují ke spolehlivé předpovědi tlakových ztrát. Model založený na těchto datech byl validován pomocí hydraulických a tepelných měření a využit k posouzení vlivu tepelné vodivosti pevné fáze a efektivní výšky tepelně aktivní části porézní struktury. Ve srovnávacím experimentu nastala u hladkého kanálu krize varu přibližně při 4~MW/m$^2$, zatímco porézní kanál zůstal stabilní až do dosaženého tepelného toku 4,7~MW/m$^2$. U porézního kanálu nebylo kritického tepelného toku dosaženo. Práce vymezuje přínosy porézního chlazení i hydraulická, geometrická a výrobní omezení, která je nutné zohlednit při návrhu.
+Disertační práce se zabývá hydraulickými a tepelnými vlastnostmi chladicích kanálů s porézními materiály pro aplikace s vysokými tepelnými toky v jaderné fúzi. Výzkum propojuje parametrické CFD výpočty, experimentální charakterizaci skutečných porézních materiálů, simulace proudění v geometrii rekonstruované z dat výpočetní mikrotomografie a ověřovací experiment při vysokém tepelném zatížení. Pro idealizované porézní geometrie byly stanoveny vztahy mezi porozitou, tortuozitou, permeabilitou a Forchheimerovým koeficientem. Vzorky s podobnou naměřenou porozitou vykazovaly rozdílné tlakové ztráty. Pro výběr vložky proto samotná porozita ani jmenovitý počet pórů na palec nestačí. Model založený na těchto datech byl validován pomocí hydraulických a tepelných měření a využit k posouzení vlivu tepelné vodivosti pevné fáze a efektivní výšky tepelně aktivní části porézní struktury. Ve srovnávacím experimentu nastala u hladkého kanálu krize varu přibližně při 4~MW/m$^2$, zatímco porézní kanál zůstal stabilní až do dosaženého tepelného toku 4,7~MW/m$^2$. U porézního kanálu nebylo kritického tepelného toku dosaženo. Práce vymezuje přínosy porézního chlazení i hydraulická, geometrická a výrobní omezení, která je nutné zohlednit při návrhu.
 
 \noindent\textbf{Klíčová slova:} jaderná fúze; vysoký tepelný tok; porézní materiály; chladicí kanály; tlaková ztráta; CFD; krize varu.
 
@@ -1460,7 +1460,7 @@ The results validate the use of µ-CT coupled with CFD for accurately simulating
 \part{Numerical and Experimental Investigation}
 This part presents the original research carried out within the framework of the doctoral project. The work combines numerical simulations and experimental measurements to investigate the hydraulic and thermal behaviour of porous-material-based cooling channels intended for high-heat-flux applications in magnetic-confinement fusion devices.
 
-The research is arranged in the same order as the underlying methodology. Chapter~8 summarizes preliminary numerical and experimental work that established methods subsequently used in the main programme. Chapter~9 then uses controlled substitute geometries to quantify the influence of porosity and tortuosity and to assess the accuracy of computational fluid dynamics (CFD) for pore-resolved flow. Chapter~10 provides the corresponding experimental characterization and hydraulic measurements of real porous samples in the TEALC facility. Chapter~11 increases the geometrical fidelity by analysing microCT-reconstructed porous structures, including conjugate heat transfer. Finally, Chapter~12 presents the high-heat-flux proof-of-concept experiment and the comparison between a plain channel and a porous insert.
+The research is arranged in the same order as the underlying methodology. Chapter~8 summarizes preliminary numerical and experimental work that established methods subsequently used in the main programme. Chapter~9 then uses controlled substitute geometries to quantify the influence of porosity and tortuosity and to assess the accuracy of computational fluid dynamics (CFD) for pore-resolved flow. Chapter~10 provides the corresponding experimental characterization and hydraulic measurements of real porous samples in the TEALC facility. Chapter~11 increases the geometrical fidelity by analysing microCT-reconstructed porous structures, with surface heat-transfer coefficients transferred from the flow calculation to the solid thermal model. Finally, Chapter~12 presents the high-heat-flux proof-of-concept experiment and the comparison between a plain channel and a porous insert.
 
 This sequence separates preliminary method development from the main porous-channel investigation and follows the logic numerical model $\rightarrow$ experimental validation $\rightarrow$ realistic geometry $\rightarrow$ high-heat-flux demonstration.
 
@@ -3091,7 +3091,7 @@ node[
 \label{fig:mesh_sens}
 \end{figure}
 
-Figure \ref{fig:yplus_distribuce} shows the Y+ distribution on the porous foam walls for the chosen mesh size.
+Figure \ref{fig:yplus_distribuce} shows the $y^+$ distribution on the porous foam walls for the chosen mesh size.
 The distribution applies to the plotted inlet velocity of $0.26~\mathrm{m\,s^{-1}}$. Since wall shear stress changes with velocity, this plot alone does not establish the $y^+$ range at the higher flow rates.
 
 \pagebreak
@@ -3099,7 +3099,7 @@ The distribution applies to the plotted inlet velocity of $0.26~\mathrm{m\,s^{-1
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.98\linewidth]{distribuce_Yplusu.png}
-\caption{Y+ distribution on porous foam walls, $v_{inlet} = 0.26\,\mathrm{m\,s^{-1}}$}
+\caption{$y^+$ distribution on porous foam walls, $v_{inlet} = 0.26\,\mathrm{m\,s^{-1}}$}
 \label{fig:yplus_distribuce}
 \end{figure}
 
@@ -3770,7 +3770,7 @@ fill between[of=bottomB and curve];
 
 \subsection{Effective height of the porous foam heat sink}
 
-The effective height $h_{\mathrm{eff90}}$ is measured from the heated wall along the $x$-axis. At this height the section-averaged solid temperature has fallen through 90\,\% of the difference between its wall-side value $T(0)$ and the reference fluid temperature $T_f$. Thus $T(h_{\mathrm{eff90}})-T_f=0.1[T(0)-T_f]$. Figure~\ref{fig:profily_mech_1x} illustrates the construction for 0.05~m/s and 1~MW/m$^2$. This temperature criterion does not measure cumulative heat removal.
+The effective height $h_{\mathrm{eff90}}$ is measured from the heated wall along the $x$-axis. At this height the section-averaged solid temperature has fallen through 90\,\% of the difference between its wall-side value $T(0)$ and the reference fluid temperature $T_f$. Thus $T(h_{\mathrm{eff90}})-T_f=0.1[T(0)-T_f]$. Figure~\ref{fig:profily_mech_1x} illustrates the construction for 0.05~m/s and 1~MW/m$^2$. For the plotted profile, $T(0)=105.56~^\circ\mathrm{C}$ and $T_f=60~^\circ\mathrm{C}$ give a threshold of $64.56~^\circ\mathrm{C}$, close to the sampled value at 0.34~mm. This temperature criterion does not measure cumulative heat removal.
 
 \begin{figure}[H]
 \centering
@@ -3792,19 +3792,19 @@ The effective height $h_{\mathrm{eff90}}$ is measured from the heated wall along
 \addplot table[x=A4, y=A0, col sep=semicolon,color=red] {nove_hodnoty.csv};
 \addlegendentry{\phantom{0}0.05 $\,\mathrm{m\,s^{-1}}$}
 
-% vertikální čára x = 64.5
+% vertikální čára x = 64.56
 \addplot [
     black,
     dashed,
     line width=1pt
-] coordinates {(64.5,0) (64.5,0.38)};
+] coordinates {(64.56,0) (64.56,0.34)};
 
 
-% vertikální čára x = 64.5
+% vertikální čára x = 64.56
 \addplot [
     black,
     line width=1pt
-] coordinates {(55,0.38) (64.5,0.38)};
+] coordinates {(55,0.34) (64.56,0.34)};
 
 \addplot[
     only marks,
@@ -3813,10 +3813,10 @@ The effective height $h_{\mathrm{eff90}}$ is measured from the heated wall along
     very thick,
     color=black
 ]
-coordinates {(64.5,0.38)}
+coordinates {(64.56,0.34)}
 node[
     anchor=south west
-] {$\boldsymbol{h_{\text{eff90}}=0.38\,\mathrm{mm}}$};
+] {$\boldsymbol{h_{\text{eff90}}\approx 0.34\,\mathrm{mm}}$};
 
 
 \end{axis}
@@ -3828,7 +3828,7 @@ node[
 Figure \ref{fig:profily_mech_2x} shows the effective height of the foam heat sink as a function of inlet velocity for different heat flux loads.
 As inlet velocity increases, the temperature difference between foam and coolant decays over a shorter distance. This observation identifies the region with the largest temperature change. It does not establish an optimum foam thickness.
 
-\doplnit{Ověřit shodu provozního bodu v obr.~\ref{fig:profily_mech_1x} a~\ref{fig:profily_mech_2x}. Při 0,05~m/s a 1~MW/m$^2$ je v ilustraci označeno 0,38~mm, zatímco souhrnná data uvádějí 0,158~mm.}
+\doplnit{Ověřit shodu provozního bodu v obr.~\ref{fig:profily_mech_1x} a~\ref{fig:profily_mech_2x}. Při 0,05~m/s a 1~MW/m$^2$ vychází z teplotního profilu přibližně 0,34~mm, zatímco souhrnná data uvádějí 0,158~mm.}
 
 \begin{figure}[ht]
 \centering
@@ -4081,7 +4081,7 @@ This experimental result provides an important qualification to the parametric n
 \section{microCT-based CFD of the real porous structure}
 \subsection*{Principal results}
 \begin{itemize}
-    \item The real porous geometry reconstructed from micro-computed tomography was used directly for detailed CFD and conjugate heat-transfer analysis.
+    \item The real porous geometry reconstructed from micro-computed tomography was used for pore-resolved CFD and a solid thermal model with separate convection coefficients for the wall and foam.
     \item The pressure-drop curve rises with velocity but lies below the measurements. The thermal model captures the rise in thermocouple temperature with applied heat flux; at the four plotted loads the surface-average prediction differs from the local measurement by about 2--14~K.
     \item The material comparison showed a strong effect of solid thermal conductivity on heat spreading inside the porous structure. Copper distributed heat most effectively, while lower-conductivity materials confined the thermal field closer to the heated region.
     \item The temperature profiles place the largest solid-to-fluid temperature differences close to the heated wall. The characteristic decay length decreases as inlet velocity increases.
@@ -4147,7 +4147,7 @@ These limitations do not reduce the value of the results; they define the approp
 \textbf{Status: Fulfilled for the selected materials and tested conditions.}
 \begin{itemize}
     \item Hydraulic characteristics of the investigated porous materials were measured and reduced to Darcy--Forchheimer parameters.
-    \item Thermal behaviour was assessed by comparison with the validated microCT-based conjugate heat-transfer model and by the high-heat-flux proof-of-concept experiment.
+    \item Thermal behaviour was assessed by comparison with the microCT-based solid thermal model with CFD-derived convection coefficients and by the high-heat-flux proof-of-concept experiment.
     \item The porous-sample CHF itself was not reached; therefore the experiment defines a demonstrated lower bound of thermal performance rather than the absolute CHF of the porous configuration.
 \end{itemize}
 
