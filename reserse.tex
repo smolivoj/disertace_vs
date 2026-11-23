@@ -14,7 +14,7 @@
 \inputencoding{utf8}
 \usepackage{hyperref}
 \usepackage[all]{hypcap}
-\hypersetup{colorlinks=false, linkbordercolor=1 1 1, citebordercolor=1 1 1}
+\hypersetup{hidelinks}
 \usepackage[right]{lineno}
 \usepackage{a4wide}
 \usepackage{nccmath}
@@ -130,7 +130,7 @@ s využitím pórovitých materiálů\par}
 \pagebreak
 \section*{Abstract}
 \addcontentsline{toc}{section}{Abstract}
-This dissertation investigates the hydraulic and thermal behaviour of porous-material cooling channels intended for high-heat-flux applications in nuclear fusion. The work combines parametric computational fluid dynamics (CFD), experimental characterization of real porous materials, geometry-resolved simulations based on micro-computed tomography and a high-heat-flux proof-of-concept experiment. For controlled substitute geometries, correlations are established between porosity, tortuosity, permeability and the Forchheimer coefficient. Measurements on commercial porous materials demonstrate that similar measured porosities can give different pressure losses and that a nominal pore count is insufficient for selecting an insert. The microCT-based numerical model, validated against hydraulic and thermal measurements, is used to examine the influence of solid thermal conductivity and the thermally active height of the porous matrix. In the comparative high-heat-flux experiment, a plain channel reached critical heat flux at approximately 4~MW/m$^2$, whereas the porous channel remained stable up to the applied limit of 4.7~MW/m$^2$. The absolute critical heat flux of the porous channel was not determined. The dissertation thus identifies both the potential of porous cooling structures and the hydraulic, geometrical and manufacturing limitations that must be considered in their design.
+This dissertation investigates the hydraulic and thermal behaviour of porous-material cooling channels intended for high-heat-flux applications in nuclear fusion. The work combines parametric computational fluid dynamics (CFD), experimental characterization of real porous materials, geometry-resolved simulations based on micro-computed tomography and a high-heat-flux proof-of-concept experiment. For controlled substitute geometries, correlations are established between porosity, tortuosity, permeability and the Forchheimer coefficient. Measurements on commercial porous materials demonstrate that samples with similar measured porosity can have different pressure losses. Nominal pore counts do not describe the shape or connectivity of the flow passages. The microCT-based numerical model, validated against hydraulic and thermal measurements, is used to examine the influence of solid thermal conductivity and the thermally active height of the porous matrix. In the comparative high-heat-flux experiment, a plain channel reached critical heat flux at approximately 4~MW/m$^2$, whereas the porous channel remained stable up to the applied limit of 4.7~MW/m$^2$. The absolute critical heat flux of the porous channel was not determined. The dissertation thus identifies both the potential of porous cooling structures and the hydraulic, geometrical and manufacturing limitations that must be considered in their design.
 
 \noindent\textbf{Keywords:} nuclear fusion; high heat flux; porous media; cooling channels; pressure drop; computational fluid dynamics; critical heat flux.
 
@@ -274,11 +274,13 @@ The production of energetic neutrons introduces major engineering challenges, pa
 The Lawson criterion combines plasma density, temperature and energy confinement time to express the conditions required for a favourable fusion power balance.
 Among practically relevant fuel cycles, the D--T reaction reaches useful reactivity at the lowest plasma temperature and is therefore the baseline for first-generation fusion power reactors.
 
+\begin{samepage}
 \begin{equation}
 \text{D} + \text{T} \rightarrow {}^{4}\text{He} \,(3.5\, \text{MeV}) + \text{n} \,(14.1\, \text{MeV})
 \label{eq:dt}
 \end{equation}
 where D and T denote deuterium and tritium, respectively, ${}^{4}\mathrm{He}$ is the alpha particle and $\mathrm{n}$ is the neutron. The kinetic energies carried by the reaction products are shown in parentheses.
+\end{samepage}
 
 
 \subsection{Magnetic confinement - Tokamak design}
@@ -312,7 +314,6 @@ Despite these advantages, tokamaks require sophisticated active control systems 
 Feedback control of plasma current, vertical stability, and plasma position is essential for safe operation, particularly in large, high-performance devices.
 Consequently, advances in diagnostics, control algorithms, and power electronics have become an integral part of modern tokamak engineering.
 
-\pagebreak
 \subsection{Magnetic confinement - Stellarator design}
 The stellarator is the second principal concept for magnetic confinement fusion. In contrast to the axisymmetric tokamak, the stellarator produces the required rotational transform predominantly by three-dimensional external coils and therefore does not require a large transformer-driven plasma current for steady-state confinement. This is its principal physical advantage for continuous operation, but it leads to substantially more complex magnetic and mechanical geometry.
 
@@ -1416,7 +1417,6 @@ The simplified RUC model successfully predicts pressure drops across metallic fo
 The results of the model were validated against experimental data from metallic foam samples of various porosities and cell sizes. The method shows that it can accurately predict pressure gradients without the necessity for prior knowledge of the specific flow behavior of the porous medium, making it highly adaptable and reliable for real-world applications.
 In conclusion, the method of simplifying porous structures into substitute geometries offers a robust and efficient way to predict fluid behavior in highly porous materials. It simplifies the complexity of real-world structures while maintaining a high level of accuracy.
 
-\pagebreak
 \subsection{Microstructure scanned by microtomography}
 The complex method of CFD modeling in 3D-scanned porous materials is described on the example of microtomography ($\mu T$).
 The study "Microtomography-based CFD Analysis of Transport in Open-Cell Aluminum Metal Foams" by Paola Ranut et al. (2014) focuses on the CFD analysis of transport properties in open-cell aluminum foams \cite{Ranut2014}.
@@ -3228,8 +3228,6 @@ The maximal velocity inside the porous structure reaches up to 2x the inlet velo
 \end{figure}
 
 
-\pagebreak
-
 \subsection{Heat transfer coupled model}
 
 In order to evaluate the heat transfer characteristics of porous materials used in cooling channels, a coupled simulation between ANSYS Fluent and ANSYS Mechanical is employed.
@@ -4071,7 +4069,7 @@ The controlled geometry study establishes the clearest causal relationship obtai
 \begin{itemize}
     \item Commercial porous samples were characterized by microscopy and pressure-drop measurements and described using Darcy--Forchheimer parameters.
     \item Materials of similar measured porosity exhibited different pressure-loss characteristics.
-    \item Porosity and PPI were therefore insufficient as stand-alone descriptors for predicting the hydraulic response of the investigated real porous materials.
+    \item Mean equivalent pore diameter showed a trend with inertial resistance in the metallic samples, but not across all material classes. A nominal pore count (PPI) also omits pore shape and connectivity.
     \item Fitted pressure-loss coefficients described the tested samples across the measured velocity range. For six samples the viscous term was too small to identify permeability reliably.
 \end{itemize}
 
@@ -4155,7 +4153,7 @@ These limitations do not reduce the value of the results; they define the approp
 \textbf{Status: Fulfilled for controlled geometries; only partially transferable to real foams.}
 \begin{itemize}
     \item Quantitative correlations between porosity, tortuosity, permeability and inertial resistance were obtained for the controlled geometry family.
-    \item Measurements on real porous samples showed that porosity and PPI alone are not sufficient to transfer these relationships directly to commercial foams.
+    \item Neither measured porosity nor mean equivalent pore diameter accounted for the hydraulic differences across all commercial samples.
     \item The microCT analysis demonstrated the importance of solid thermal conductivity and of the thermally active porous-layer thickness for heat transfer.
 \end{itemize}
 
@@ -4187,7 +4185,7 @@ The numerical and experimental results show that hydraulic resistance is quantif
 \subsection{H2: Microstructural characteristics can be used to predict hydraulic behaviour prior to flow testing}
 \textbf{Evaluation: Not confirmed in its original general form.}
 
-For the controlled substitute geometries, porosity and tortuosity were quantitatively related to hydraulic parameters. For the real porous materials, however, the descriptors available from conventional characterization, particularly porosity and PPI, did not uniquely determine the measured hydraulic response. For example, the pore-diameter trend observed for the metallic samples did not extend to the ceramic and polymer groups. A prediction before flow testing was therefore not established for the commercial samples.
+For the controlled substitute geometries, porosity and tortuosity were quantitatively related to hydraulic parameters. For the real porous materials, however, the descriptors available from conventional characterization, specifically measured porosity and mean equivalent pore diameter, did not uniquely determine the measured hydraulic response. For example, the pore-diameter trend observed for the metallic samples did not extend to the ceramic and polymer groups. A prediction before flow testing was therefore not established for the commercial samples.
 
 \subsection{H3: Porous structures increase the critical heat-flux margin}
 \textbf{Evaluation: Supported by the comparative proof of concept, but not quantified as an absolute CHF enhancement factor.}
@@ -4200,7 +4198,7 @@ I carried out all the research reported in the publications on which I am first 
 The original scientific contribution of the dissertation can be summarized in five connected points:
 \begin{enumerate}
     \item \textbf{Controlled hydraulic correlations.} Quantitative relationships were obtained between porosity, tortuosity and Darcy--Forchheimer hydraulic parameters for the investigated substitute-geometry family, allowing the independent effects of these geometrical variables to be interpreted.
-    \item \textbf{Identification of the limit of nominal foam descriptors.} Experiments on real porous materials demonstrated that porosity and PPI alone are insufficient for reliable prediction of hydraulic behaviour, establishing the need for richer morphology information or direct hydraulic calibration.
+    \item \textbf{Identification of the limit of nominal foam descriptors.} Across the tested materials, neither measured porosity nor mean equivalent pore diameter provided a general prediction of pressure loss. Nominal specifications such as PPI cannot supply the missing information on flow-path geometry.
     \item \textbf{Geometry-resolved microCT methodology.} A microCT-based CFD approach was developed and validated for both hydraulic and thermal behaviour of the real porous structure, enabling local transport mechanisms to be studied without replacing the foam by a homogeneous porous zone.
     \item \textbf{Effective heat-sink-height interpretation.} The quantity $h_{\mathrm{eff90}}$ was used to describe the thermally active part of the porous structure and to show that additional foam thickness does not necessarily produce a proportional thermal benefit.
     \item \textbf{High-heat-flux proof of concept.} A porous copper cooling channel sustained the maximum applied heat flux of 4.7~MW/m$^2$ without reaching CHF, while the plain reference channel reached CHF at approximately 4~MW/m$^2$, demonstrating a higher observed operating margin of the porous concept under the investigated conditions.
